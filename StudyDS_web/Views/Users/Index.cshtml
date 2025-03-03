@@ -1,0 +1,28 @@
+﻿@model List<User>
+
+<h3>Users</h3>
+<div class="validation-summary" asp-validation-summary="All"></div>
+
+@if (Model != null)
+{
+    <div class="row">
+        @foreach (var user in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@user.Name</h5>
+                        <p class="card-text"><strong>Email:</strong> @user.Email</p>
+                        <p class="card-text"><strong>ID:</strong> @user.UserId</p>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-primary" asp-action="UpdateUser" asp-route-userId="@user.UserId">Edit</a>
+                            <a class="btn btn-danger" asp-action="DeleteUser" asp-route-userId="@user.UserId">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+<br />
+<a class="btn btn-success" asp-action="RegisterUser">Create New User</a>

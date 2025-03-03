@@ -1,0 +1,12 @@
+# Visual Studio
+.vscode/
+*.suo
+*.user
+*.vcxproj*
+*.csproj.user
+
+# Build output
+bin/
+obj/
+out/
+
