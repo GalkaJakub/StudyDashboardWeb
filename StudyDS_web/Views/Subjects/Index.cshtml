@@ -1,0 +1,23 @@
+﻿@model List<Subject>
+
+<h3>Subjects</h3>
+
+@if(Model != null)
+{
+    <div class="row">
+        @foreach (var subject in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@subject.Name</h5>
+                        <p class="card-text"><strong>User:</strong> @subject.UserId</p>
+                        <p class="card-text"><strong>Ects:</strong> @subject.Ects</p>
+                        <p class="card-text"><strong>Priority:</strong> @subject.PriorityLevel</p>
+                        <p class="card-text"><strong>ID:</strong> @subject.SubjectId</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

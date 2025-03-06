@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Study_dashboard_API.Data;
-using Study_dashboard_API.Models.Repositories;
 
 namespace Study_dashboard_API.Filters.ExceptionFilters
 {

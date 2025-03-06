@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Study_dashboard_API\Study_dashboard_API.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Repositories\" />
+  </ItemGroup>
+
 </Project>

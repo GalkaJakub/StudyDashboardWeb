@@ -1,5 +1,6 @@
 ﻿using Study_dashboard_API.Models.Validations;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Study_dashboard_API.Models
 {

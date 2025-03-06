@@ -35,7 +35,7 @@ namespace Study_dashboard_API.Filters.ActionFilters
                     var subject = db.Subjects.Find(subjectId.Value);
                     if (subject == null)
                     {
-                        context.ModelState.AddModelError("SubjectId", "Sucject doesn't exist");
+                        context.ModelState.AddModelError("SubjectId", "Subject doesn't exist");
                         var problemDetails = new ValidationProblemDetails(context.ModelState)
                         {
                             Status = StatusCodes.Status404NotFound

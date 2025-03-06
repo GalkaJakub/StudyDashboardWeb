@@ -19,38 +19,45 @@ namespace Study_dashboard_API.Controllers
             this.db = db;
         }
 
-        [HttpGet("user/{id}")]
-        [TypeFilter(typeof(User_ValidateUserIdFilterAttribute))]
-        public IActionResult GetSubjects(int id)
+        [HttpGet]
+        public IActionResult getSubjects()
         {
-            var events = db.Subjects.Where(x => x.UserId == id).ToList();
-            return Ok(events);
+            return Ok(db.Subjects.ToList());
         }
 
         [HttpGet("{subjectId}")]
         [TypeFilter(typeof(Subject_ValidateSubjectIdFilterAttribute))]
-        public IActionResult GetSubjectById(int subjectId)
+        public IActionResult getSubjectById(int subjectId)
         {
             return Ok(HttpContext.Items["subject"]);
         }
         
         [HttpPost]
-        public IActionResult CreateSubject([FromBody]Subject subject)
+        [TypeFilter(typeof(Subject_ValidateAddSubjectFilterAttribute))]
+        public IActionResult createSubject([FromBody]Subject subject)
         {
             db.Subjects.Add(subject);
             db.SaveChanges();
-            return Ok();
+            return CreatedAtAction(nameof(getSubjectById), new { subjectId = subject.SubjectId }, subject);
         }
 
         [HttpPut("{subjectId}")]
-        public IActionResult UpdateSubject(int subjectId, Subject subject)
+        [TypeFilter(typeof(Subject_ValidateSubjectIdFilterAttribute))]
+        [TypeFilter(typeof(Subject_ValidateUpdateSubjectFilterAttribute))]
+        public IActionResult updateSubject(int subjectId, Subject subject)
         {
-            return Ok();
+            var subjectToUpdate = HttpContext.Items["subject"] as Subject;
+            subjectToUpdate.PriorityLevel = subject.PriorityLevel;
+            subjectToUpdate.Ects = subject.Ects;
+            subjectToUpdate.Name = subject.Name;
+            db.SaveChanges();
+
+            return NoContent();
         }
 
         [HttpDelete("{subjectId}")]
         [TypeFilter(typeof(Subject_ValidateSubjectIdFilterAttribute))]
-        public IActionResult DeleteSubject(int subjectId)
+        public IActionResult deleteSubject(int subjectId)
         {
             var subject = HttpContext.Items["subject"] as Subject;
             var events = db.Events.Where(x => x.SubjectId == subjectId).ToList();

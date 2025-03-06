@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Study_dashboard_API.Data;
 using Study_dashboard_API.Models;
 
@@ -17,7 +18,39 @@ namespace Study_dashboard_API.Filters.ActionFilters
         {
             base.OnActionExecuting(context);
 
-            var subject = context.HttpContext.Items["subject"] as Subject;
+            var subject = context.ActionArguments["subject"] as Subject;
+            if (subject == null)
+            {
+                context.ModelState.AddModelError("Subject", "subject is null");
+                var problemDetails = new ValidationProblemDetails(context.ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest
+                };
+                context.Result = new BadRequestObjectResult(problemDetails);
+            }
+            else
+            {
+                var validateSubject = db.Subjects.FirstOrDefault(x => x.Name.ToLower() == subject.Name.ToLower());
+                if (validateSubject != null)
+                {
+                    context.ModelState.AddModelError("Subject", "Subject already exist");
+                    var problemDetails = new ValidationProblemDetails(context.ModelState)
+                    {
+                        Status = StatusCodes.Status400BadRequest
+                    };
+                    context.Result = new BadRequestObjectResult(problemDetails);
+                }
+                var validateUser = db.Users.FirstOrDefault(x=> x.UserId == subject.UserId);
+                if (validateUser == null)
+                {
+                    context.ModelState.AddModelError("Subject", "User doesn't exist");
+                    var problemDetails = new ValidationProblemDetails(context.ModelState)
+                    {
+                        Status = StatusCodes.Status400BadRequest
+                    };
+                    context.Result = new BadRequestObjectResult(problemDetails);
+                }
+            }
         }
     }
 }

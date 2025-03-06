@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace Study_dashboard_API.Models
 {
@@ -17,11 +18,11 @@ namespace Study_dashboard_API.Models
         public int PriorityLevel { get; set; }
         [Required]
         public DateTime Date { get; set; }
-
         public int UserId { get; set; }
         public int? SubjectId { get; set; }
-
+        [JsonIgnore]
         public User? User { get; set; }
+        [JsonIgnore]
         public Subject? Subject { get; set; }
     }
 }

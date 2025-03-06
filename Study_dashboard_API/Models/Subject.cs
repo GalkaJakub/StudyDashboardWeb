@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Study_dashboard_API.Models
 {
@@ -15,6 +16,7 @@ namespace Study_dashboard_API.Models
         [Range(0, 2)]
         public int PriorityLevel { get; set; }
         public int UserId { get; set; }
-        public User User { get; set; }
+        [JsonIgnore]
+        public User? User { get; set; }
     }
 }

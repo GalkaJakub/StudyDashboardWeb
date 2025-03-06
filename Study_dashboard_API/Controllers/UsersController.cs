@@ -4,13 +4,12 @@ using Study_dashboard_API.Filters.ActionFilters;
 using Study_dashboard_API.Filters.AuthFilters;
 using Study_dashboard_API.Filters.ExceptionFilters;
 using Study_dashboard_API.Models;
-using Study_dashboard_API.Models.Repositories;
 
 namespace Study_dashboard_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [JwtTokenAuthFilter]
+    //[JwtTokenAuthFilter]
     public class UsersController: ControllerBase
     {
         private readonly ApplicationDbContext db;
