@@ -17,7 +17,6 @@ namespace Study_dashboard_API.Filters.ActionFilters
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             base.OnActionExecuting(context);
-
             var userId = context.ActionArguments["id"] as int?;
 
             if (userId.HasValue)
