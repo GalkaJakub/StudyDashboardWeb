@@ -4,12 +4,14 @@ using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using Study_dashboard_API.Data;
 using Study_dashboard_API.Filters.ActionFilters;
+using Study_dashboard_API.Filters.AuthFilters;
 using Study_dashboard_API.Models;
 
 namespace Study_dashboard_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [JwtTokenAuthFilter]
     public class SubjectsController: ControllerBase
     {
         private readonly ApplicationDbContext db;

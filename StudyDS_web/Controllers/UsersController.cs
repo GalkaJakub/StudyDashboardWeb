@@ -4,7 +4,7 @@ using StudyDS_web.Data;
 
 namespace StudyDS_web.Controllers
 {
-    public class UsersController : Controller
+    public class UsersController : ControllerBase
     {
         private readonly IWebApiExecuter webApiExecuter;
 
@@ -90,17 +90,6 @@ namespace StudyDS_web.Controllers
             {
                 HandleWebApiException(ex);
                 return View(nameof(Index), await webApiExecuter.InvokeGet<List<User>>("users"));
-            }
-        }
-
-        private void HandleWebApiException(WebApiExceptions ex)
-        {
-            if (ex.ErrorResponse != null && ex.ErrorResponse.Errors != null && ex.ErrorResponse.Errors.Count > 0)
-            {
-                foreach (var error in ex.ErrorResponse.Errors)
-                {
-                    ModelState.AddModelError(error.Key, string.Join(", ", error.Value));
-                }
             }
         }
     }

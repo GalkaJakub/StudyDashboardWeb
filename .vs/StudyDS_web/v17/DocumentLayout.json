@@ -3,76 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\jakub\\Documents\\StudyDS_web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\users\\registeruser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\users\\registeruser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\authority\\authenticator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\authority\\authenticator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\filters\\authfilters\\jwttokenauthfilterattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\filters\\authfilters\\jwttokenauthfilterattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\filters\\operationsfilters\\authorizationheaderoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\filters\\operationsfilters\\authorizationheaderoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\authority\\apprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\authority\\apprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\authority\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\authority\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\authority\\appcredencial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\authority\\appcredencial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\controllers\\authoritycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\controllers\\authoritycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\data\\webapiexecuter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\data\\webapiexecuter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\models\\subject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\controllers\\subjectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\controllers\\subjectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\data\\iwebapiexecuter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\data\\iwebapiexecuter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\subjects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\subjects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,240 +50,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RegisterUser.cshtml",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Users\\RegisterUser.cshtml",
-              "RelativeDocumentMoniker": "StudyDS_web\\Views\\Users\\RegisterUser.cshtml",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Users\\RegisterUser.cshtml",
-              "RelativeToolTip": "StudyDS_web\\Views\\Users\\RegisterUser.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-06T20:52:47.952Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "StudyDS_web\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "StudyDS_web\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACAAAAB/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-06T20:50:38.22Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "StudyDS_web\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "StudyDS_web\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-06T20:50:36.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "StudyDS_web\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "StudyDS_web\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-06T20:50:34.062Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Program.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Program.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Program.cs",
-              "RelativeToolTip": "StudyDS_web\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:49:00.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Study_dashboard_API\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Study_dashboard_API\\Controllers\\UsersController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:48:32.672Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Users\\Index.cshtml",
-              "RelativeDocumentMoniker": "StudyDS_web\\Views\\Users\\Index.cshtml",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Users\\Index.cshtml",
-              "RelativeToolTip": "StudyDS_web\\Views\\Users\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-06T20:39:31.039Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Subjects\\Index.cshtml",
-              "RelativeDocumentMoniker": "StudyDS_web\\Views\\Subjects\\Index.cshtml",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Subjects\\Index.cshtml",
-              "RelativeToolTip": "StudyDS_web\\Views\\Subjects\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-06T20:39:27.195Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "StudyDS_web\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:34:55.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "StudyDS_web\\Controllers\\UsersController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:31:54.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SubjectsController.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\SubjectsController.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Controllers\\SubjectsController.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\SubjectsController.cs",
-              "RelativeToolTip": "StudyDS_web\\Controllers\\SubjectsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:31:53.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "EventsController.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\EventsController.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Controllers\\EventsController.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\EventsController.cs",
-              "RelativeToolTip": "StudyDS_web\\Controllers\\EventsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:30:58.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "StudyDS_web\\Models\\ErrorViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:07:14.021Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\User.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\User.cs",
-              "RelativeToolTip": "StudyDS_web\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:06:43.819Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Subject.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\Subject.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Models\\Subject.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\Subject.cs",
-              "RelativeToolTip": "StudyDS_web\\Models\\Subject.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAADwvxEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:06:22.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Event.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\Event.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Models\\Event.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\Event.cs",
-              "RelativeToolTip": "StudyDS_web\\Models\\Event.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:06:11.447Z",
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "StudyDS_web\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "StudyDS_web\\Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-08T18:21:53.965Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "StudyDS_web\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "StudyDS_web\\Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-08T18:21:50.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JwtTokenAuthFilterAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Filters\\AuthFilters\\JwtTokenAuthFilterAttribute.cs",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\Filters\\AuthFilters\\JwtTokenAuthFilterAttribute.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Filters\\AuthFilters\\JwtTokenAuthFilterAttribute.cs",
+              "RelativeToolTip": "Study_dashboard_API\\Filters\\AuthFilters\\JwtTokenAuthFilterAttribute.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T18:21:14.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthorizationHeaderOperationFilter.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Filters\\OperationsFilters\\AuthorizationHeaderOperationFilter.cs",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\Filters\\OperationsFilters\\AuthorizationHeaderOperationFilter.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Filters\\OperationsFilters\\AuthorizationHeaderOperationFilter.cs",
+              "RelativeToolTip": "Study_dashboard_API\\Filters\\OperationsFilters\\AuthorizationHeaderOperationFilter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T18:20:58.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppRepository.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Authority\\AppRepository.cs",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\Authority\\AppRepository.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Authority\\AppRepository.cs",
+              "RelativeToolTip": "Study_dashboard_API\\Authority\\AppRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T18:20:44.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppCredencial.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Authority\\AppCredencial.cs",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\Authority\\AppCredencial.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Authority\\AppCredencial.cs",
+              "RelativeToolTip": "Study_dashboard_API\\Authority\\AppCredencial.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T18:20:33.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Application.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Authority\\Application.cs",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\Authority\\Application.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Authority\\Application.cs",
+              "RelativeToolTip": "Study_dashboard_API\\Authority\\Application.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T18:20:32.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "WebApiExecuter.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Data\\WebApiExecuter.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Data\\WebApiExecuter.cs",
               "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Data\\WebApiExecuter.cs",
               "RelativeToolTip": "StudyDS_web\\Data\\WebApiExecuter.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAuwBwAAAAoAAAA",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAAAIoAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:05:04.306Z",
+              "WhenOpened": "2025-03-08T18:11:52.207Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IWebApiExecuter.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Data\\IWebApiExecuter.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Data\\IWebApiExecuter.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Data\\IWebApiExecuter.cs",
-              "RelativeToolTip": "StudyDS_web\\Data\\IWebApiExecuter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAABAAAA",
+              "DocumentIndex": 8,
+              "Title": "AuthorityController.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Controllers\\AuthorityController.cs",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\Controllers\\AuthorityController.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Controllers\\AuthorityController.cs",
+              "RelativeToolTip": "Study_dashboard_API\\Controllers\\AuthorityController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABkAAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T20:04:40.222Z",
+              "WhenOpened": "2025-03-08T18:06:43.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Authenticator.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Authority\\Authenticator.cs",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\Authority\\Authenticator.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Authority\\Authenticator.cs",
+              "RelativeToolTip": "Study_dashboard_API\\Authority\\Authenticator.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACMAAABdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T18:06:19.468Z",
               "EditorCaption": ""
             }
           ]

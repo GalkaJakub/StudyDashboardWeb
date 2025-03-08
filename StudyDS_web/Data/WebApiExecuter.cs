@@ -1,6 +1,5 @@
 ﻿using Azure;
 using Newtonsoft.Json;
-using System.Text.Json;
 using System.Net.Http.Headers;
 
 namespace StudyDS_web.Data
@@ -23,7 +22,16 @@ namespace StudyDS_web.Data
         public async Task<T?> InvokeGet<T>(string relativeUrl)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
-            await AddJwtToHeader(httpClient);
+            try
+            {
+                AddJwtToHeader(httpClient);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                httpContextAccessor.HttpContext.Response.Redirect("Account/Login");
+                return default;
+            }
+
             var request = new HttpRequestMessage(HttpMethod.Get, relativeUrl);
             var response = await httpClient.SendAsync(request);
             await HandleError(response);
@@ -34,7 +42,16 @@ namespace StudyDS_web.Data
         public async Task<T?> InvokePost<T>(string relativeUrl, T obj)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
-            await AddJwtToHeader(httpClient);
+            try
+            {
+                AddJwtToHeader(httpClient);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                httpContextAccessor.HttpContext.Response.Redirect("Account/Login");
+                return default;
+            }
+
             var response = await httpClient.PostAsJsonAsync(relativeUrl, obj);
             await HandleError(response);
             return await response.Content.ReadFromJsonAsync<T>();
@@ -43,7 +60,16 @@ namespace StudyDS_web.Data
         public async Task InvokePut<T>(string relativeUrl, T obj)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
-            await AddJwtToHeader(httpClient);
+            try
+            {
+                AddJwtToHeader(httpClient);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                httpContextAccessor.HttpContext.Response.Redirect("Account/Login");
+                return;
+            }
+
             var response = await httpClient.PutAsJsonAsync(relativeUrl, obj);
             await HandleError(response);
         }
@@ -51,7 +77,16 @@ namespace StudyDS_web.Data
         public async Task InvokeDelete<T>(string relativeUrl)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
-            await AddJwtToHeader(httpClient);
+
+            try
+            {
+                AddJwtToHeader(httpClient);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                httpContextAccessor.HttpContext.Response.Redirect("Account/Login");
+                return;
+            }
             var response = await httpClient.DeleteAsync(relativeUrl);
             await HandleError(response);
         }
@@ -65,36 +100,45 @@ namespace StudyDS_web.Data
             }
         }
 
-        private async Task AddJwtToHeader(HttpClient httpClient)
+        // Podczas logowania przekazuje tutaj login i hasło, wysyłane jest to Do Api które generuje JWT, który zapisywany jest do cookies
+        public async Task InvokeLogin(string? login, string? password)
         {
-            JwtToken? token = null;
+
+            var clientId = configuration.GetValue<string>("ClientId");
+            var secret = configuration.GetValue<string>("Secret");
+
+            //Authenticate
+            var authClient = httpClientFactory.CreateClient(authApiName);
+            var response = await authClient.PostAsJsonAsync("auth", new AppCredencial
+            {
+                ClientId = clientId,
+                Secret = secret,
+                UserName = login,
+                UserPassword = password
+            });
+
+            await HandleError(response);
+            //Get JWT
+            string strToken = await response.Content.ReadAsStringAsync();
+            JsonConvert.DeserializeObject<JwtToken>(strToken);
+            httpContextAccessor.HttpContext?.Session.SetString("access_token", strToken);
+        }
+
+        // Odczytuje z ciasteczek JWT zalogowanego uzytkownika dodany po zalogowaniu, jesli nie ma trzeba bedzie przejsc do logowania, tak samo kiedy token wygasnie
+        private void AddJwtToHeader(HttpClient httpClient)
+        {
             string? strToken = httpContextAccessor.HttpContext?.Session.GetString("access_token");
             if (!string.IsNullOrEmpty(strToken))
             {
-                token = JsonConvert.DeserializeObject<JwtToken>(strToken);
-            }
-
-            if (token == null || token.ExpiresAt <= DateTime.UtcNow)
-            {
-                var clientId = configuration.GetValue<string>("ClientId");
-                var secret = configuration.GetValue<string>("Secret");
-
-                //Authenticate
-                var authClient = httpClientFactory.CreateClient(authApiName);
-                var response = await authClient.PostAsJsonAsync("auth", new AppCredencial
+                JwtToken? token = JsonConvert.DeserializeObject<JwtToken>(strToken);
+                if (token != null && token.ExpiresAt > DateTime.UtcNow)
                 {
-                    ClientId = clientId,
-                    Secret = secret
-                });
-
-                response.EnsureSuccessStatusCode();
-                //Get JWT
-                strToken = await response.Content.ReadAsStringAsync();
-                token = JsonConvert.DeserializeObject<JwtToken>(strToken);
-                httpContextAccessor.HttpContext?.Session.SetString("access_token", strToken);
+                    //Pass JWT to endpoints
+                    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token?.AccessToken);
+                    return;
+                }
             }
-            //Pass JWT to endpoints
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token?.AccessToken);
+            throw new UnauthorizedAccessException("JWT token is missing or expired.");
         }
     }
 }

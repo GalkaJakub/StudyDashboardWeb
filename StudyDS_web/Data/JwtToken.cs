@@ -9,5 +9,7 @@ namespace StudyDS_web.Data
         public string? AccessToken { get; set; }
         [JsonProperty("expires_at")]
         public DateTime ExpiresAt { get; set; }
+        [JsonProperty("user_id")]
+        public string? userId { get; set; }
     }
 }

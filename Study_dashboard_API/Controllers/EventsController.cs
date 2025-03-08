@@ -2,12 +2,14 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using Study_dashboard_API.Data;
 using Study_dashboard_API.Filters.ActionFilters;
+using Study_dashboard_API.Filters.AuthFilters;
 using Study_dashboard_API.Models;
 
 namespace Study_dashboard_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [JwtTokenAuthFilter]
     public class EventsController: ControllerBase
     {
         private readonly ApplicationDbContext db;
@@ -23,12 +25,11 @@ namespace Study_dashboard_API.Controllers
             return Ok(db.Events.ToList());
         }
 
-        [HttpGet("eventId")]
+        [HttpGet("{eventId}")]
         [TypeFilter(typeof(Event_ValidateEventIdFilterAttribute))]
         public ActionResult getEventById(int eventId)
         {
-            var ev = HttpContext.Items["event"] as Event;
-            return Ok(ev);
+            return Ok(HttpContext.Items["event"]);
         }
 
         [HttpPost]
@@ -40,7 +41,7 @@ namespace Study_dashboard_API.Controllers
             return CreatedAtAction("getEventById", new {eventId = ev.EventId}, ev);
         }
 
-        [HttpPut("eventId")]
+        [HttpPut("{eventId}")]
         [TypeFilter(typeof(Event_ValidateEventIdFilterAttribute))]
         [TypeFilter(typeof(Event_ValidateUpdateEventFilterAttribute))]
         public ActionResult updateEvent(int eventId, Event ev)
@@ -55,7 +56,7 @@ namespace Study_dashboard_API.Controllers
             return NoContent();
         }
 
-        [HttpDelete("eventId")]
+        [HttpDelete("{eventId}")]
         [TypeFilter(typeof(Event_ValidateEventIdFilterAttribute))]
         public ActionResult deleteEvent(int eventId)
         {

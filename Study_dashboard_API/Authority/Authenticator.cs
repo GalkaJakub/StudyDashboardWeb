@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Study_dashboard_API.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -26,13 +27,14 @@ namespace Study_dashboard_API.Authority
         // Signature key (podpis)
 
         //Nuget packet: System.IdentityModel.Tokens.Jwt
-        public static string CreateToken(string clientId, DateTime expireAt, string strSecretKey)
+        public static string CreateToken(string clientId, string userId, DateTime expireAt, string strSecretKey)
         {
             var app = AppRepository.GetApplication(clientId);
 
             var claims = new List<Claim>
             {
                 new Claim("AppName", app.ApplicationName??string.Empty), //jeśli null = empty
+                new Claim("UserId", userId),
                 new Claim("Read", (app?.Scopes??string.Empty).Contains("read")?"true": "false"),
                 new Claim("Write", (app?.Scopes??string.Empty).Contains("write")?"true": "false"),
             };

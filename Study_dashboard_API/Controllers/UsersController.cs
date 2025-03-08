@@ -9,7 +9,7 @@ namespace Study_dashboard_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    //[JwtTokenAuthFilter]
+    [JwtTokenAuthFilter]
     public class UsersController: ControllerBase
     {
         private readonly ApplicationDbContext db;
@@ -32,7 +32,7 @@ namespace Study_dashboard_API.Controllers
         }
         [HttpPut("{id}")]
         [TypeFilter(typeof(User_ValidateUserIdFilterAttribute))]
-        [User_ValidateUpdateUserFilter]
+        [TypeFilter(typeof(User_ValidateUpdateUserFilterAttribute))]
         [TypeFilter(typeof(User_HandleUpdateUserExceptionFilterAttribute))]
         public IActionResult updateUser(int id, User user)
         {
