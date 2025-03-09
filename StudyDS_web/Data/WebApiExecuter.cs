@@ -100,7 +100,14 @@ namespace StudyDS_web.Data
             }
         }
 
-        // Podczas logowania przekazuje tutaj login i hasło, wysyłane jest to Do Api które generuje JWT, który zapisywany jest do cookies
+        public async Task<T?> InvokePostRegister<T>(string relativeUrl, T obj)
+        {
+            var httpClient = httpClientFactory.CreateClient(apiName);
+            var response = await httpClient.PostAsJsonAsync(relativeUrl, obj);
+            await HandleError(response);
+            return await response.Content.ReadFromJsonAsync<T>();
+        }
+
         public async Task InvokeLogin(string? login, string? password)
         {
 
@@ -124,7 +131,6 @@ namespace StudyDS_web.Data
             httpContextAccessor.HttpContext?.Session.SetString("access_token", strToken);
         }
 
-        // Odczytuje z ciasteczek JWT zalogowanego uzytkownika dodany po zalogowaniu, jesli nie ma trzeba bedzie przejsc do logowania, tak samo kiedy token wygasnie
         private void AddJwtToHeader(HttpClient httpClient)
         {
             string? strToken = httpContextAccessor.HttpContext?.Session.GetString("access_token");

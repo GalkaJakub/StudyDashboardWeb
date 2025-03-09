@@ -14,8 +14,8 @@ namespace Study_dashboard_API.Models
         public int? Ects { get; set; }
         [Required]
         [Range(0, 2)]
-        public int PriorityLevel { get; set; }
-        public int UserId { get; set; }
+        public PriorityLevelEnum PriorityLevel { get; set; }
+        public int? UserId { get; set; }
         [JsonIgnore]
         public User? User { get; set; }
     }

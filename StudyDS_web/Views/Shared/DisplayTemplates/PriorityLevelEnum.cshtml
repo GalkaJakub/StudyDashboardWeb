@@ -1,0 +1,11 @@
+﻿@model StudyDS_web.Models.PriorityLevelEnum
+@{
+    string displayName = Model switch
+    {
+        StudyDS_web.Models.PriorityLevelEnum.Low => "Niski",
+        StudyDS_web.Models.PriorityLevelEnum.Medium => "Średni",
+        StudyDS_web.Models.PriorityLevelEnum.High => "Wysoki",
+        _ => Model.ToString()
+    };
+}
+@displayName

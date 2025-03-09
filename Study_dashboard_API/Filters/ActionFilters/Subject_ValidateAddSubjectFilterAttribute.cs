@@ -40,16 +40,6 @@ namespace Study_dashboard_API.Filters.ActionFilters
                     };
                     context.Result = new BadRequestObjectResult(problemDetails);
                 }
-                var validateUser = db.Users.FirstOrDefault(x=> x.UserId == subject.UserId);
-                if (validateUser == null)
-                {
-                    context.ModelState.AddModelError("Subject", "User doesn't exist");
-                    var problemDetails = new ValidationProblemDetails(context.ModelState)
-                    {
-                        Status = StatusCodes.Status400BadRequest
-                    };
-                    context.Result = new BadRequestObjectResult(problemDetails);
-                }
             }
         }
     }

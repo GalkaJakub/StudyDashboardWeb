@@ -24,7 +24,9 @@ namespace Study_dashboard_API.Controllers
         [HttpGet]
         public IActionResult getSubjects()
         {
-            return Ok(db.Subjects.ToList());
+            var userId = HttpContext.Items["UserId"] as int?;
+            var subjects = db.Subjects.Where(x=> x.UserId == userId).ToList();
+            return Ok(subjects);
         }
 
         [HttpGet("{subjectId}")]
@@ -38,6 +40,8 @@ namespace Study_dashboard_API.Controllers
         [TypeFilter(typeof(Subject_ValidateAddSubjectFilterAttribute))]
         public IActionResult createSubject([FromBody]Subject subject)
         {
+            var userId = HttpContext.Items["UserId"] as int?;
+            subject.UserId = userId;
             db.Subjects.Add(subject);
             db.SaveChanges();
             return CreatedAtAction(nameof(getSubjectById), new { subjectId = subject.SubjectId }, subject);

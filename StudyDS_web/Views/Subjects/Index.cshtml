@@ -1,4 +1,7 @@
-﻿@model List<Subject>
+﻿@{
+    ViewData["Title"] = "Przedmioty";
+}
+@model List<Subject>
 
 <h3>Subjects</h3>
 
@@ -11,12 +14,11 @@
                 <div class="card mb-4 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">@subject.Name</h5>
-                        <p class="card-text"><strong>Ects:</strong> @subject.Ects</p>
-                        <p class="card-text"><strong>Priority:</strong> @subject.PriorityLevel</p>
+                        <p class="card-text"><strong>Ilość ECTS:</strong> @subject.Ects</p>
+                        <p class="card-text"><strong>Priorytet:</strong> @Html.DisplayFor(model => subject.PriorityLevel)</p>
                         <p class="card-text"><strong>ID:</strong> @subject.SubjectId</p>
-                        <p class="card-text"><strong>UserId:</strong> @subject.UserId</p>
                         <div class="d-flex justify-content-between">
-                            <a class="btn btn-primary" asp-action="UpdateSub" asp-route-subjectId="@subject.SubjectId">Edit</a>
+                            <a class="btn btn-primary" asp-action="UpdateSub" asp-route-subjectId="@subject.SubjectId">Edytuj</a>
                             <a class="btn btn-danger" asp-action="DeleteSub" asp-route-subjectId="@subject.SubjectId">Delete</a>
                         </div>
                     </div>

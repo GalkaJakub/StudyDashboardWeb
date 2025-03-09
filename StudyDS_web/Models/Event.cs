@@ -15,10 +15,21 @@ namespace StudyDS_web.Models
         public string Description { get; set; }
         [Required]
         [Range(0, 2)]
-        public int PriorityLevel { get; set; }
+        public PriorityLevelEnum PriorityLevel { get; set; }
         [Required]
         public DateTime Date { get; set; }
         public int UserId { get; set; }
         public int? SubjectId { get; set; }
     }
+
+    public enum PriorityLevelEnum
+    {
+        [Display(Name = "niski")]
+        Low = 0,
+        [Display(Name = "średni")]
+        Medium = 1,
+        [Display(Name = "wysoki")]
+        High = 2
+    }
+
 }

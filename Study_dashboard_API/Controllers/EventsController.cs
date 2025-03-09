@@ -22,7 +22,9 @@ namespace Study_dashboard_API.Controllers
         [HttpGet]
         public ActionResult getEvents()
         {
-            return Ok(db.Events.ToList());
+            var userId = HttpContext.Items["UserId"] as int?;
+            var events = db.Events.Where(x => x.UserId == userId).ToList();
+            return Ok(events);
         }
 
         [HttpGet("{eventId}")]
@@ -36,6 +38,8 @@ namespace Study_dashboard_API.Controllers
         [TypeFilter(typeof(Event_ValidateAddEventFilterAttribute))]
         public ActionResult createEvent([FromBody]Event ev)
         {
+            var userId = HttpContext.Items["UserId"] as int?;
+            ev.UserId = userId;
             db.Events.Add(ev);
             db.SaveChanges();
             return CreatedAtAction("getEventById", new {eventId = ev.EventId}, ev);

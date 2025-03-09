@@ -1,8 +1,61 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Study Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Section -->
+<div class="container my-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h1 class="display-4">Study Dashboard</h1>
+            <p class="lead">
+                Twój osobisty panel do zarządzania wydarzeniami i przedmiotami w semestrze.
+            </p>
+            <p>
+                Utwórz swój profil, dodawaj wydarzenia (termin oddania projektów, egzaminów, kolokwiów, zadań), notatki oraz sortuj je według daty lub ważności. Przeglądaj także listę przedmiotów z punktami ECTS, zaliczeniami i poziomem trudności. Nie zapomnij o interaktywnym kalendarzu, który pomoże Ci uporządkować plan zajęć.
+            </p>
+            <div class="mt-4">
+                <a class="btn btn-primary btn-lg mr-2" href="@Url.Action("Login", "Account")">Logowanie</a>
+                <a class="btn btn-success btn-lg" href="@Url.Action("Register", "Account")">Rejestracja</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- Możesz tu wstawić grafikę lub ilustrację -->
+            <img src="~/images/study-dashboard.png" alt="Study Dashboard" class="img-fluid">
+        </div>
+    </div>
 </div>
+
+<!-- Features Section -->
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card border-0">
+                <div class="card-body">
+                    <!-- Ikony Bootstrap (upewnij się, że masz dołączoną bibliotekę bootstrap-icons) -->
+                    <i class="bi bi-person-circle" style="font-size: 3rem;"></i>
+                    <h5 class="card-title mt-3">Profil Użytkownika</h5>
+                    <p class="card-text">Szybkie i intuicyjne tworzenie oraz zarządzanie Twoim profilem.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card border-0">
+                <div class="card-body">
+                    <i class="bi bi-calendar-check" style="font-size: 3rem;"></i>
+                    <h5 class="card-title mt-3">Wydarzenia</h5>
+                    <p class="card-text">Dodawaj ważne daty – terminy oddania projektów, egzaminów, kolokwiów oraz zadań. Ustawiaj priorytet i notatki, aby mieć wszystko pod kontrolą.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card border-0">
+                <div class="card-body">
+                    <i class="bi bi-book" style="font-size: 3rem;"></i>
+                    <h5 class="card-title mt-3">Przedmioty</h5>
+                    <p class="card-text">Przeglądaj przedmioty wraz z ECTS, zaliczeniami i poziomem trudności, by lepiej planować semestr.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

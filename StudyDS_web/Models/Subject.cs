@@ -14,7 +14,7 @@ namespace StudyDS_web.Models
         public int? Ects { get; set; }
         [Required]
         [Range(0, 2)]
-        public int PriorityLevel { get; set; }
+        public PriorityLevelEnum PriorityLevel { get; set; }
         public int UserId { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Security.Claims;
 using System.Collections.Generic;
 using Study_dashboard_API.Data;
+using Study_dashboard_API.Security;
 
 namespace Study_dashboard_API.Controllers
 {
@@ -15,11 +16,13 @@ namespace Study_dashboard_API.Controllers
         //IConfiguration pobiera informacje z ustawien konfiguracyjnych aplikacji np. z appsettings.json 
         private readonly IConfiguration configuration;
         private readonly ApplicationDbContext db;
+        private readonly IPasswordHasher passwordHasher;
 
-        public AuthorityController(IConfiguration configuration, ApplicationDbContext db)
+        public AuthorityController(IConfiguration configuration, ApplicationDbContext db, IPasswordHasher passwordHasher)
         {
             this.configuration = configuration;
             this.db = db;
+            this.passwordHasher = passwordHasher;
         }
 
         [HttpPost("auth")]
@@ -37,9 +40,9 @@ namespace Study_dashboard_API.Controllers
                     };
                     return new UnauthorizedObjectResult(problemDetails);
                 }
-                else if (user.Password == appCredencial.UserPassword)
+                else if (passwordHasher.Verify(user.Password, appCredencial.UserPassword))
                 {
-                    var expiresAt = DateTime.UtcNow.AddMinutes(2);
+                    var expiresAt = DateTime.UtcNow.AddHours(2);
                     string userId = user.UserId.ToString();
                     return Ok(new
                     {

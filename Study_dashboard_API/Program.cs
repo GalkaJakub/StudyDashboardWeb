@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Study_dashboard_API.Data;
 using Study_dashboard_API.Filters.OperationsFilters;
 using Microsoft.OpenApi.Models;
+using Study_dashboard_API.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,7 @@ builder.Services.AddSwaggerGen(c =>
         In = ParameterLocation.Header
     });
 });
+builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 
 var app = builder.Build();
 

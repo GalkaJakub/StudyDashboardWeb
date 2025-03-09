@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudyDS_web.Models;
 using StudyDS_web.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace StudyDS_web.Controllers
 {

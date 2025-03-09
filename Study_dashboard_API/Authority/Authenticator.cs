@@ -54,9 +54,9 @@ namespace Study_dashboard_API.Authority
             return new JwtSecurityTokenHandler().WriteToken(jwt);
         }
 
-        public static bool VerifyToken(string token, string strSecretKey)
+        public static JwtSecurityToken? VerifyToken(string token, string strSecretKey)
         {
-            if (string.IsNullOrEmpty(token)) return false;
+            if (string.IsNullOrEmpty(token)) return null;
 
             if (token.StartsWith("Bearer")) token = token.Substring(6).Trim();
 
@@ -80,14 +80,14 @@ namespace Study_dashboard_API.Authority
             }
             catch (SecurityTokenException)
             {
-                return false;
+                return null;
             }
             catch
             {
                 throw;
             }
 
-            return securityToken != null;
+            return securityToken as JwtSecurityToken;
         }
     }
 }

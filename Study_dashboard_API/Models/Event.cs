@@ -10,19 +10,26 @@ namespace Study_dashboard_API.Models
         [Key]
         public int EventId { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         [Required]
-        public string Description { get; set; }
+        public string? Description { get; set; }
         [Required]
         [Range(0, 2)]
-        public int PriorityLevel { get; set; }
+        public PriorityLevelEnum PriorityLevel { get; set; }
         [Required]
         public DateTime Date { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
         public int? SubjectId { get; set; }
         [JsonIgnore]
         public User? User { get; set; }
         [JsonIgnore]
         public Subject? Subject { get; set; }
+    }
+
+    public enum PriorityLevelEnum
+    {
+        Low = 0,
+        Medium = 1,
+        High = 2
     }
 }

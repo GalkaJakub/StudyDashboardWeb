@@ -4,33 +4,51 @@ using Study_dashboard_API.Filters.ActionFilters;
 using Study_dashboard_API.Filters.AuthFilters;
 using Study_dashboard_API.Filters.ExceptionFilters;
 using Study_dashboard_API.Models;
+using Study_dashboard_API.Security;
 
 namespace Study_dashboard_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [JwtTokenAuthFilter]
     public class UsersController: ControllerBase
     {
         private readonly ApplicationDbContext db;
+        private readonly IPasswordHasher passwordHasher;
 
-        public UsersController(ApplicationDbContext db)
+        public UsersController(ApplicationDbContext db, IPasswordHasher passwordHasher)
         {
             this.db = db;
+            this.passwordHasher = passwordHasher;
         }
 
         [HttpGet]
+        [JwtTokenAuthFilter]
         public IActionResult getUsers()
         {
             return Ok(db.Users.ToList());
         }
         [HttpGet("{id}")]
+        [JwtTokenAuthFilter]
         [TypeFilter(typeof(User_ValidateUserIdFilterAttribute))]
         public IActionResult getUserById(int id)
         {
             return Ok(HttpContext.Items["user"]);
         }
+
+        [HttpGet("current")]
+        [JwtTokenAuthFilter]
+        public IActionResult getUser()
+        {
+            var userId = HttpContext.Items["UserId"] as int?;
+            var user = db.Users.Find(userId);
+            if (user == null)
+            {
+                return BadRequest();
+            }
+            return Ok(user);
+        }
         [HttpPut("{id}")]
+        [JwtTokenAuthFilter]
         [TypeFilter(typeof(User_ValidateUserIdFilterAttribute))]
         [TypeFilter(typeof(User_ValidateUpdateUserFilterAttribute))]
         [TypeFilter(typeof(User_HandleUpdateUserExceptionFilterAttribute))]
@@ -48,11 +66,14 @@ namespace Study_dashboard_API.Controllers
         [TypeFilter(typeof(User_ValidateAddUserFilterAttribute))]
         public IActionResult createUser([FromBody]User user)
         {
+            var passwordHash = passwordHasher.HashPassword(user.Password);
+            user.Password = passwordHash;
             db.Users.Add(user);
             db.SaveChanges();
             return CreatedAtAction(nameof(getUserById), new { id = user.UserId }, user);
         }
         [HttpDelete("{id}")]
+        [JwtTokenAuthFilter]
         [TypeFilter(typeof(User_ValidateUserIdFilterAttribute))]
         public IActionResult deleteUser(int id)
         {

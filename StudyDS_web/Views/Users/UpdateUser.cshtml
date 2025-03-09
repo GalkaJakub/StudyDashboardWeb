@@ -1,6 +1,6 @@
 ﻿@model User
 
-<h3>User</h3>
+<h3>Moje konto</h3>
 <br />
 <form method="post" asp-action="UpdateUser">
     <input type="hidden" asp-for="UserId" />
@@ -8,18 +8,7 @@
     <div class="text-danger" asp-validation-summary="All"></div>
     <div class="mb-3 row">
         <div class="col-2">
-            <label asp-for="Email" class="col-form-label"></label>
-        </div>
-        <div class="col-6">
-            <input type="text" asp-for="Email" class="form-control" />
-        </div>
-        <div class="col">
-            <span class="text-danger" asp-validation-for="Email"></span>
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="Name" class="col-form-label"></label>
+            <label asp-for="Name" class="col-form-label">Login</label>
         </div>
         <div class="col-6">
             <input type="text" asp-for="Name" class="form-control" />
@@ -30,7 +19,18 @@
     </div>
     <div class="mb-3 row">
         <div class="col-2">
-            <input type="submit" class="btn-group btn-primary" value="Save" />
+            <label asp-for="Email" class="col-form-label">Adres Email</label>
+        </div>
+        <div class="col-6">
+            <input type="text" asp-for="Email" class="form-control" />
+        </div>
+        <div class="col">
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-2">
+            <input type="submit" class="btn-group btn-primary" value="Zapisz" />
         </div>
     </div>
 </form>

@@ -17,36 +17,11 @@ namespace StudyDS_web.Controllers
             return View(await webApiExecuter.InvokeGet<List<User>>("users"));
         }
 
-        public IActionResult RegisterUser()
-        {
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> RegisterUser(User user)
-        {   
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    var response = await webApiExecuter.InvokePost("users", user);
-                    if (response != null)
-                    {
-                        return RedirectToAction(nameof(Index));
-                    }
-                }
-                catch (WebApiExceptions ex)
-                {
-                    HandleWebApiException(ex);
-                }
-            }
-            return View(user);
-        }
-
-        public async Task<IActionResult> UpdateUser(int userId)
+        public async Task<IActionResult> UpdateUser()
         {
             try
             {
-                var user = await webApiExecuter.InvokeGet<User>($"users/{userId}");
+                var user = await webApiExecuter.InvokeGet<User>($"users/current");
                 if (user != null)
                 {
                     return View(user);
@@ -58,7 +33,6 @@ namespace StudyDS_web.Controllers
                 HandleWebApiException(ex);
                 return View();
             }
-
             return NotFound();
         }
 
@@ -70,7 +44,7 @@ namespace StudyDS_web.Controllers
                 try
                 {
                     await webApiExecuter.InvokePut($"users/{user.UserId}", user);
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(Index), "subjects");
                 }
                 catch (WebApiExceptions ex)
                 {

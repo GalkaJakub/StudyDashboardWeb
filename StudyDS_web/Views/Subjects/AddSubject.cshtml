@@ -1,4 +1,7 @@
-﻿@model Subject
+﻿@{
+    ViewData["Title"] = "Przedmioty";
+}
+@model Subject
 
 <h3>New Subject</h3>
 <br />
@@ -7,7 +10,7 @@
     <div class="text-danger" asp-validation-summary="All"></div>
     <div class="mb-3 row">
         <div class="col-2">
-            <label asp-for="Name" class="col-form-label"></label>
+            <label asp-for="Name" class="col-form-label">Nazwa</label>
         </div>
         <div class="col-6">
             <input type="text" asp-for="Name" class="form-control" />
@@ -15,32 +18,21 @@
     </div>
     <div class="mb-3 row">
         <div class="col-2">
-            <label asp-for="PriorityLevel" class="col-form-label"></label>
-        </div>        
-        <div class="col-6">
-            <input type="range" asp-for="PriorityLevel" class="form-range" min="0" max="2" step="1" id="customRange3">
-        </div>        
-        <div class="col">
-            <span class="text-danger" asp-validation-for="PriorityLevel"></span>
+            <label asp-for="PriorityLevel" class="col-form-label">Priorytet</label>
+        </div>
+        <div class="col-5">
+            <input type="range" asp-for="PriorityLevel" class="form-range" min="0" max="2" step="1" id="priorityRange" oninput="updatePriorityValue(this.value)" />
+        </div>
+        <div class="col-2">
+            <span id="priorityValue" class="fw-bold"></span>
         </div>
     </div>
     <div class="mb-3 row">
         <div class="col-2">
-            <label asp-for="Ects" class="col-form-label"></label>
+            <label asp-for="Ects" class="col-form-label">Ilość ECTS</label>
         </div>
         <div class="col-6">
             <input type="number" asp-for="Ects" class="form-control" min="1" />
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="UserId" class="col-form-label"></label>
-        </div>
-        <div class="col-6">
-            <input type="number" asp-for="UserId" class="form-control" min="1" />
-        </div>
-        <div class="col">
-            <span class="text-danger" asp-validation-for="UserId"></span>
         </div>
     </div>
     <div class="mb-3 row">
@@ -49,3 +41,29 @@
         </div>
     </div>
 </form>
+
+@section Scripts {
+    <script>
+        function updatePriorityValue(val) {
+            let text = "";
+            switch (val) {
+                case "0":
+                    text = "Niski";
+                    break;
+                case "1":
+                    text = "Średni";
+                    break;
+                case "2":
+                    text = "Wysoki";
+                    break;
+                default:
+                    text = val;
+            }
+            document.getElementById("priorityValue").innerText = text;
+        }
+        window.addEventListener("DOMContentLoaded", function () {
+            var slider = document.getElementById("priorityRange");
+            updatePriorityValue(slider.value);
+        });
+    </script>
+}

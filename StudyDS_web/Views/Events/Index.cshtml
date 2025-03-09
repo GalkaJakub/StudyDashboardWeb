@@ -1,4 +1,7 @@
-﻿@model List<Event>
+﻿@{
+    ViewData["Title"] = "Wydarzenia";
+}
+@model List<Event>
 
 <h3>Events</h3>
 
@@ -11,12 +14,11 @@
                 <div class="card mb-4 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">@ev.Name</h5>
-                        <p class="card-text"><strong>Description:</strong> @ev.Description</p>
-                        <p class="card-text"><strong>Final Date:</strong> @ev.Date</p>
-                        <p class="card-text"><strong>Priority:</strong> @ev.PriorityLevel</p>
+                        <p class="card-text"><strong>Opis:</strong> @ev.Description</p>
+                        <p class="card-text"><strong>Czas wykonania:</strong> @ev.Date.ToString("dd/MM/yyyy")</p>
+                        <p class="card-text"><strong>Priorytet:</strong> @Html.DisplayFor(model => ev.PriorityLevel)</p>
                         <p class="card-text"><strong>ID:</strong> @ev.EventId</p>
-                        <p class="card-text"><strong>SubjectId:</strong> @ev.SubjectId</p>
-                        <p class="card-text"><strong>UserId:</strong> @ev.UserId</p>
+                        <p class="card-text"><strong>Przedmiot:</strong> @(ev.SubjectId?.ToString() ?? "Brak")</p>
                         <div class="d-flex justify-content-between">
                             <a class="btn btn-primary" asp-action="UpdateEv" asp-route-eventId="@ev.EventId">Edit</a>
                             <a class="btn btn-danger" asp-action="DeleteEv" asp-route-eventId="@ev.EventId">Delete</a>
