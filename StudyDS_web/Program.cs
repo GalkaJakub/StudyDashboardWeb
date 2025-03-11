@@ -27,23 +27,6 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddTransient<IWebApiExecuter, WebApiExecuter>();
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["SecretKey"])),
-        ValidateIssuer = false,
-        ValidateAudience = false,
-        ClockSkew = TimeSpan.Zero
-    };
-});
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -59,9 +42,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
-
 app.UseSession();
+
+app.UseMiddleware<AuthMiddleware>();
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

@@ -3,7 +3,7 @@
 }
 @model List<Subject>
 
-<h3>Subjects</h3>
+<h3>Przedmioty</h3>
 
 @if(Model != null)
 {
@@ -27,7 +27,20 @@
         }
     </div>
     <br />
-    <div class="mb-5">
-        <a class="btn btn-success" asp-action="addSubject">Create New Subject</a>
+    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#eventModal">Nowy przedmiot</button>
+
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Dodaj przedmiot</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+                </div>
+                <div class="modal-body">
+                    @await Html.PartialAsync("AddSubject", new Subject())
+                </div>
+            </div>
+        </div>
     </div>
+
 }

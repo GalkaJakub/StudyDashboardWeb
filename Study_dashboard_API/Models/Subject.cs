@@ -19,4 +19,11 @@ namespace Study_dashboard_API.Models
         [JsonIgnore]
         public User? User { get; set; }
     }
+
+    public enum PassFormat
+    {
+        Exam,
+        Test,
+        Laboratory
+    }
 }

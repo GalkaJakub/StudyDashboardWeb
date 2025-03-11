@@ -1,45 +1,44 @@
 ﻿@model User
+@{
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = "Rejestracja";
+}
 
-<h3>Rejestracja</h3>
-<br />
-<form method="post" asp-action="Register">
-    <div class="text-danger" asp-validation-summary="All"></div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="Name" class="col-form-label">Login</label>
-        </div>
-        <div class="col-6">
-            <input type="text" asp-for="Name" class="form-control" />
-        </div>
-        <div class="col">
-            <span class="text-danger" asp-validation-for="Name"></span>
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="Email" class="col-form-label">Adres Email</label>
-        </div>
-        <div class="col-6">
-            <input type="text" asp-for="Email" class="form-control" />
-        </div>
-        <div class="col">
-            <span class="text-danger" asp-validation-for="Email"></span>
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="Password" class="col-form-label">Hasło</label>
-        </div>
-        <div class="col-6">
-            <input type="password" asp-for="Password" class="form-control" />
-        </div>
-        <div class="col">
-            <span class="text-danger" asp-validation-for="Password"></span>
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <input type="submit" class="btn-group btn-primary" value="Submit" />
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-login text-white">
+                    <h4 class="mb-0">Rejestracja</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Register" method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label">Login</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Adres Email</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label">Hasło</label>
+                            <input asp-for="Password" type="password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-login-custom">Zarejestruj się</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <small>Masz już konto? <a asp-controller="Account" asp-action="Login">Zaloguj się</a></small>
+                </div>
+            </div>
         </div>
     </div>
-</form>
+</div>
+

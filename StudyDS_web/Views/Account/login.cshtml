@@ -1,27 +1,42 @@
 ﻿@model User
-<h3>Logowanie</h3>
+@{
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+    ViewData["Title"] = "Logowanie";
+}
 
-<form method="post" action="Login">
-    <div class="text-danger" asp-validation-summary="All"></div>
-    <div class="mb-3 row">
-        <div class="col-3">
-            <label class="col-form-label">Podaj login</label>
-        </div>
-        <div class="col-6">
-            <input asp-for="Name" type="text" class="form-control" />
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-login text-white">
+                    <h4 class="mb-0">Logowanie</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Login" method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label">Login</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label">Hasło</label>
+                            <input asp-for="Password" type="password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-login-custom">Zaloguj</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <small>Nie masz konta? <a asp-controller="Account" asp-action="Register">Zarejestruj się</a></small>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="mb-3 row">
-        <div class="col-3">
-            <label class="col-form-label">Podaj Hasło</label>
-        </div>
-        <div class="col-6">
-            <input asp-for="Password" type="password" class="form-control" />
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <input type="submit" class="btn-group btn-primary" value="Zaloguj" />
-        </div>
-    </div>
-</form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

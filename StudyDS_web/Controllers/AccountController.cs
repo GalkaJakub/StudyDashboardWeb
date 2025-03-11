@@ -25,7 +25,7 @@ namespace StudyDS_web.Controllers
                 try
                 {
                     await webApiExecuter.InvokeLogin(user.Name, user.Password);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Subjects");
                 }
                 catch (WebApiExceptions ex)
                 {

@@ -21,3 +21,18 @@ body {
   margin-bottom: 60px;
 }
 
+.bg-login {
+    background-color: #5DADE2 !important;
+}
+
+.btn-login-custom {
+    background-color: #2E86C1 !important;
+    border-color: #2E86C1 !important;
+    color: #fff !important;
+}
+
+.btn-login-custom:hover {
+    background-color: #1B4F72 !important;
+    border-color: #1B4F72 !important;
+}
+

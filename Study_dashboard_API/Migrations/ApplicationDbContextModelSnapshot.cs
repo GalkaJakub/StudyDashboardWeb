@@ -37,6 +37,9 @@ namespace Study_dashboard_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IaActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -47,7 +50,10 @@ namespace Study_dashboard_API.Migrations
                     b.Property<int?>("SubjectId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("EventId");
@@ -64,9 +70,11 @@ namespace Study_dashboard_API.Migrations
                             EventId = 1,
                             Date = new DateTime(2025, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Nie zdam! xd",
+                            IaActive = true,
                             Name = "sprawdzian z pic",
-                            PriorityLevel = 2,
+                            PriorityLevel = 1,
                             SubjectId = 1,
+                            Type = 0,
                             UserId = 1
                         },
                         new
@@ -74,9 +82,11 @@ namespace Study_dashboard_API.Migrations
                             EventId = 2,
                             Date = new DateTime(2025, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "wejsciowka z avr",
+                            IaActive = true,
                             Name = "wejsciowka",
                             PriorityLevel = 1,
                             SubjectId = 2,
+                            Type = 0,
                             UserId = 1
                         },
                         new
@@ -84,9 +94,11 @@ namespace Study_dashboard_API.Migrations
                             EventId = 3,
                             Date = new DateTime(2025, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "literaki",
+                            IaActive = true,
                             Name = "projekt",
-                            PriorityLevel = 2,
+                            PriorityLevel = 1,
                             SubjectId = 3,
+                            Type = 0,
                             UserId = 1
                         },
                         new
@@ -94,9 +106,11 @@ namespace Study_dashboard_API.Migrations
                             EventId = 4,
                             Date = new DateTime(2025, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Nie zdam! xd",
+                            IaActive = true,
                             Name = "kolokwium",
                             PriorityLevel = 2,
                             SubjectId = 7,
+                            Type = 0,
                             UserId = 3
                         });
                 });
@@ -119,7 +133,7 @@ namespace Study_dashboard_API.Migrations
                     b.Property<int>("PriorityLevel")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("SubjectId");
@@ -134,7 +148,7 @@ namespace Study_dashboard_API.Migrations
                             SubjectId = 1,
                             Ects = 5,
                             Name = "Smiw",
-                            PriorityLevel = 2,
+                            PriorityLevel = 1,
                             UserId = 1
                         },
                         new
@@ -158,7 +172,7 @@ namespace Study_dashboard_API.Migrations
                             SubjectId = 4,
                             Ects = 1,
                             Name = "Programowanie 4",
-                            PriorityLevel = 2,
+                            PriorityLevel = 1,
                             UserId = 2
                         },
                         new
@@ -166,7 +180,7 @@ namespace Study_dashboard_API.Migrations
                             SubjectId = 5,
                             Ects = 2,
                             Name = "PBD",
-                            PriorityLevel = 0,
+                            PriorityLevel = 1,
                             UserId = 2
                         },
                         new
@@ -174,7 +188,7 @@ namespace Study_dashboard_API.Migrations
                             SubjectId = 6,
                             Ects = 1,
                             Name = "Java_web",
-                            PriorityLevel = 0,
+                            PriorityLevel = 1,
                             UserId = 3
                         },
                         new
@@ -259,8 +273,7 @@ namespace Study_dashboard_API.Migrations
                     b.HasOne("Study_dashboard_API.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Subject");
 
@@ -271,9 +284,7 @@ namespace Study_dashboard_API.Migrations
                 {
                     b.HasOne("Study_dashboard_API.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });

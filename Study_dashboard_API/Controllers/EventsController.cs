@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.EntityFrameworkCore;
 using Study_dashboard_API.Data;
 using Study_dashboard_API.Filters.ActionFilters;
 using Study_dashboard_API.Filters.AuthFilters;
@@ -23,8 +24,24 @@ namespace Study_dashboard_API.Controllers
         public ActionResult getEvents()
         {
             var userId = HttpContext.Items["UserId"] as int?;
-            var events = db.Events.Where(x => x.UserId == userId).ToList();
-            return Ok(events);
+
+            var events = db.Events
+            .Where(x => x.UserId == userId)
+            .Include(e => e.Subject)
+            .ToList();
+
+            var eventDtos = events.Select(e => new EventDto
+            {
+                EventId = e.EventId,
+                Name = e.Name,
+                Description = e.Description,
+                Date = e.Date,
+                PriorityLevel = e.PriorityLevel,
+                SubjectName = e.Subject?.Name,
+                IaActive = e.IaActive
+            }).ToList();
+
+            return Ok(eventDtos);
         }
 
         [HttpGet("{eventId}")]

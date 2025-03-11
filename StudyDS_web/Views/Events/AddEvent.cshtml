@@ -1,7 +1,9 @@
-﻿@{
+﻿@using StudyDS_web.Models.ViewModels
+
+@{
     ViewData["Title"] = "Wydarzenia";
 }
-@model Event
+@model EventFormViewModel
 
 <h3>Events</h3>
 <br />
@@ -10,26 +12,26 @@
     <div class="text-danger" asp-validation-summary="All"></div>
     <div class="mb-3 row">
         <div class="col-2">
-            <label asp-for="Name" class="col-form-label">Nazwa</label>
+            <label asp-for="Event.Name" class="col-form-label">Nazwa</label>
         </div>
         <div class="col-6">
-            <input type="text" asp-for="Name" class="form-control" />
+            <input type="text" asp-for="Event.Name" class="form-control" />
         </div>
     </div>
     <div class="mb-3 row">
         <div class="col-2">
-            <label asp-for="Description" class="col-form-label">Opis</label>
+            <label asp-for="Event.Description" class="col-form-label">Opis</label>
         </div>
         <div class="col-6">
-            <input type="text" asp-for="Description" class="form-control" />
+            <textarea asp-for="Event.Description" class="form-control" rows="5"></textarea>
         </div>
     </div>
     <div class="mb-3 row">
         <div class="col-2">
-            <label asp-for="PriorityLevel" class="col-form-label">Priorytet</label>
+            <label asp-for="Event.PriorityLevel" class="col-form-label">Priorytet</label>
         </div>
         <div class="col-5">
-            <input type="range" asp-for="PriorityLevel" class="form-range" min="0" max="2" step="1" id="priorityRange" oninput="updatePriorityValue(this.value)" />
+            <input type="range" asp-for="Event.PriorityLevel" class="form-range" min="0" max="2" step="1" id="priorityRange" oninput="updatePriorityValue(this.value)" />
         </div>
         <div class="col-2">
             <span id="priorityValue" class="fw-bold"></span>
@@ -37,18 +39,22 @@
     </div>
     <div class="mb-3 row">
         <div class="col-2">
-            <label asp-for="Date" class="col-form-label">Czas wykonania</label>
+            <label asp-for="Event.Date" class="col-form-label">Czas wykonania</label>
         </div>
         <div class="col-6">
-            <input type="date" asp-for="Date" class="form-control" min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+            <input type="date" asp-for="Event.Date" class="form-control" min="@DateTime.Now.ToString("yyyy-MM-dd")" />
         </div>
     </div>
     <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="SubjectId" class="col-form-label"></label>
-        </div>
+        <label asp-for="Event.SubjectId" class="col-form-label col-2">Przedmiot</label>
         <div class="col-6">
-            <input type="number" asp-for="SubjectId" class="form-control" />
+            <select asp-for="Event.SubjectId" class="form-select">
+                <option value="">Brak</option>
+                @foreach (var subject in Model.Subjects)
+                {
+                    <option value="@subject.SubjectId">@subject.Name</option>
+                }
+            </select>
         </div>
     </div>
     <div class="mb-3 row">
@@ -61,26 +67,23 @@
 
 @section Scripts {
     <script>
+        const priorityMap = {
+            "0": "Niski",
+            "1": "Średni",
+            "2": "Wysoki"
+        };
+
         function updatePriorityValue(val) {
-            let text = "";
-            switch (val) {
-                case "0":
-                    text = "Niski";
-                    break;
-                case "1":
-                    text = "Średni";
-                    break;
-                case "2":
-                    text = "Wysoki";
-                    break;
-                default:
-                    text = val;
-            }
-            document.getElementById("priorityValue").innerText = text;
+            document.getElementById("priorityValue").innerText = priorityMap[val] ?? val;
         }
+
         window.addEventListener("DOMContentLoaded", function () {
-            var slider = document.getElementById("priorityRange");
+            const slider = document.getElementById("priorityRange");
             updatePriorityValue(slider.value);
+
+            slider.addEventListener("input", function () {
+                updatePriorityValue(this.value);
+            });
         });
     </script>
 }

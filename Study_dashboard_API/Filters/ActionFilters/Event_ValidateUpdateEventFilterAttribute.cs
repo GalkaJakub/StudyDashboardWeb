@@ -20,6 +20,7 @@ namespace Study_dashboard_API.Filters.ActionFilters
 
             var eventId = context.ActionArguments["eventId"] as int?;
             var ev = context.ActionArguments["ev"] as Event;
+            var userId = context.HttpContext.Items["UserId"] as int?;
 
             if (eventId.HasValue && ev != null && eventId != ev.EventId)
             {
@@ -30,9 +31,21 @@ namespace Study_dashboard_API.Filters.ActionFilters
                 };
                 context.Result = new BadRequestObjectResult(problemDetails);
             }
+
+            var validateEv = db.Events.FirstOrDefault(x => x.Name == ev.Name && x.UserId == userId);
+            if (validateEv != null && validateEv.UserId == userId && validateEv.EventId != ev.EventId)
+            {
+                context.ModelState.AddModelError("Event", "Event already exist");
+                var problemDetails = new ValidationProblemDetails(context.ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest
+                };
+                context.Result = new BadRequestObjectResult(problemDetails);
+            }
+
             if (ev.SubjectId != null)
             {
-                var validateSubject = db.Subjects.FirstOrDefault(x => x.SubjectId == ev.SubjectId);
+                var validateSubject = db.Subjects.FirstOrDefault(x => x.SubjectId == ev.SubjectId && x.UserId == userId);
                 if (validateSubject == null)
                 {
                     context.ModelState.AddModelError("Event", "Subject doesn't exist");

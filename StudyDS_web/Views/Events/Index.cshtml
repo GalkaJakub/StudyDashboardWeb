@@ -3,7 +3,7 @@
 }
 @model List<Event>
 
-<h3>Events</h3>
+<h3>Wydarzenia</h3>
 
 @if (Model != null)
 {
@@ -12,13 +12,17 @@
         {
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
+                    <div class="position-absolute top-0 end-0 p-3">
+                        <input type="checkbox" class="form-check-input mark-complete" data-id="@ev.EventId" title="Zakończono" />
+                    </div>
+
                     <div class="card-body">
                         <h5 class="card-title">@ev.Name</h5>
                         <p class="card-text"><strong>Opis:</strong> @ev.Description</p>
                         <p class="card-text"><strong>Czas wykonania:</strong> @ev.Date.ToString("dd/MM/yyyy")</p>
                         <p class="card-text"><strong>Priorytet:</strong> @Html.DisplayFor(model => ev.PriorityLevel)</p>
                         <p class="card-text"><strong>ID:</strong> @ev.EventId</p>
-                        <p class="card-text"><strong>Przedmiot:</strong> @(ev.SubjectId?.ToString() ?? "Brak")</p>
+                        <p class="card-text"><strong>Przedmiot:</strong> @(ev.SubjectName ?? "Brak")</p>
                         <div class="d-flex justify-content-between">
                             <a class="btn btn-primary" asp-action="UpdateEv" asp-route-eventId="@ev.EventId">Edit</a>
                             <a class="btn btn-danger" asp-action="DeleteEv" asp-route-eventId="@ev.EventId">Delete</a>
@@ -32,5 +36,25 @@
     <br />
     <div class="mb-5">
         <a class="btn btn-success" asp-action="addEvent">Create New Event</a>
+    </div>
+
+    <!-- Button to open modal -->
+    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#eventModal">
+        Dodaj nowe wydarzenie
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nowe wydarzenie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    @await Html.PartialAsync("_AddEventForm", Model)
+                </div>
+            </div>
+        </div>
     </div>
 }

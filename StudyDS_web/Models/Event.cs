@@ -7,19 +7,16 @@ namespace StudyDS_web.Models
 {
     public class Event
     {
-        [Key]
         public int EventId { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Required]
         public string Description { get; set; }
-        [Required]
-        [Range(0, 2)]
+        public DateTime Date { get; set; } = DateTime.UtcNow.Date;
         public PriorityLevelEnum PriorityLevel { get; set; }
-        [Required]
-        public DateTime Date { get; set; }
-        public int UserId { get; set; }
+        public string? SubjectName { get; set; }
+        public bool IaActive { get; set; } = true;
+        //public EventType Type { get; set; } = EventType.Exam;
         public int? SubjectId { get; set; }
+
     }
 
     public enum PriorityLevelEnum
@@ -32,4 +29,11 @@ namespace StudyDS_web.Models
         High = 2
     }
 
+    public enum EventType
+    {
+        Exam = 0,
+        Test = 1,
+        Project = 2,
+        Presentation = 3,
+    }
 }

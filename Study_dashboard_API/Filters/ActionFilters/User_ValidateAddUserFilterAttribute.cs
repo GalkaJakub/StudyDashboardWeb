@@ -40,6 +40,16 @@ namespace Study_dashboard_API.Filters.ActionFilters
                     };
                     context.Result = new BadRequestObjectResult(problemDetails);
                 }
+                validateUser = db.Users.FirstOrDefault(x => x.Email ==  user.Email);
+                if (validateUser != null && validateUser.Email != null)
+                {
+                    context.ModelState.AddModelError("User", "User already exist.");
+                    var problemDetails = new ValidationProblemDetails(context.ModelState)
+                    {
+                        Status = StatusCodes.Status400BadRequest
+                    };
+                    context.Result = new BadRequestObjectResult(problemDetails);
+                }
             }
 
 

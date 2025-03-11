@@ -18,20 +18,10 @@ namespace StudyDS_web.Data
             this.configuration = configuration;
             this.httpContextAccessor = httpContextAccessor;
         }
-        // wysyła get i zwraca w formie Json, konwertujac na T
         public async Task<T?> InvokeGet<T>(string relativeUrl)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
-            try
-            {
-                AddJwtToHeader(httpClient);
-            }
-            catch (UnauthorizedAccessException)
-            {
-                httpContextAccessor.HttpContext.Response.Redirect("Account/Login");
-                return default;
-            }
-
+            AddJwtToHeader(httpClient);
             var request = new HttpRequestMessage(HttpMethod.Get, relativeUrl);
             var response = await httpClient.SendAsync(request);
             await HandleError(response);
@@ -42,51 +32,24 @@ namespace StudyDS_web.Data
         public async Task<T?> InvokePost<T>(string relativeUrl, T obj)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
-            try
-            {
-                AddJwtToHeader(httpClient);
-            }
-            catch (UnauthorizedAccessException)
-            {
-                httpContextAccessor.HttpContext.Response.Redirect("Account/Login");
-                return default;
-            }
-
+            AddJwtToHeader(httpClient);
             var response = await httpClient.PostAsJsonAsync(relativeUrl, obj);
             await HandleError(response);
             return await response.Content.ReadFromJsonAsync<T>();
         }
-        // Samo Task czyli tylko wysyła 
         public async Task InvokePut<T>(string relativeUrl, T obj)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
-            try
-            {
-                AddJwtToHeader(httpClient);
-            }
-            catch (UnauthorizedAccessException)
-            {
-                httpContextAccessor.HttpContext.Response.Redirect("Account/Login");
-                return;
-            }
-
+            AddJwtToHeader(httpClient);
             var response = await httpClient.PutAsJsonAsync(relativeUrl, obj);
             await HandleError(response);
+
         }
 
         public async Task InvokeDelete<T>(string relativeUrl)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
-
-            try
-            {
-                AddJwtToHeader(httpClient);
-            }
-            catch (UnauthorizedAccessException)
-            {
-                httpContextAccessor.HttpContext.Response.Redirect("Account/Login");
-                return;
-            }
+            AddJwtToHeader(httpClient);
             var response = await httpClient.DeleteAsync(relativeUrl);
             await HandleError(response);
         }
@@ -134,17 +97,8 @@ namespace StudyDS_web.Data
         private void AddJwtToHeader(HttpClient httpClient)
         {
             string? strToken = httpContextAccessor.HttpContext?.Session.GetString("access_token");
-            if (!string.IsNullOrEmpty(strToken))
-            {
-                JwtToken? token = JsonConvert.DeserializeObject<JwtToken>(strToken);
-                if (token != null && token.ExpiresAt > DateTime.UtcNow)
-                {
-                    //Pass JWT to endpoints
-                    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token?.AccessToken);
-                    return;
-                }
-            }
-            throw new UnauthorizedAccessException("JWT token is missing or expired.");
+            JwtToken? token = JsonConvert.DeserializeObject<JwtToken>(strToken);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token?.AccessToken);
         }
     }
 }

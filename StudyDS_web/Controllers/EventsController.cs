@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudyDS_web.Models;
 using StudyDS_web.Data;
+using StudyDS_web.Models.ViewModels;
 
 namespace StudyDS_web.Controllers
 {
@@ -17,19 +18,25 @@ namespace StudyDS_web.Controllers
             return View(await webApiExecuter.InvokeGet<List<Event>>("events")); 
         }
 
-        public IActionResult addEvent()
+        public async Task<IActionResult> addEvent()
         {
-            return View();
+            var model = new EventFormViewModel
+            {
+                Event = new Event(),
+                Subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects")
+            };
+
+            return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> addEvent(Event ev)
+        public async Task<IActionResult> addEvent(EventFormViewModel model)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    var response = await webApiExecuter.InvokePost("events", ev);
+                    var response = await webApiExecuter.InvokePost("events", model.Event);
                     if (response != null)
                     {
                         return RedirectToAction(nameof(Index));
@@ -40,8 +47,11 @@ namespace StudyDS_web.Controllers
                     HandleWebApiException(ex);
                 }
             }
-            return View(ev);
+
+            model.Subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects");
+            return View(model);
         }
+
 
         public async Task<IActionResult> UpdateEv(int eventId)
         {
@@ -50,7 +60,12 @@ namespace StudyDS_web.Controllers
                 var ev = await webApiExecuter.InvokeGet<Event>($"events/{eventId}");
                 if (ev != null)
                 {
-                    return View(ev);
+                    var model = new EventFormViewModel
+                    {
+                        Event = ev,
+                        Subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects")
+                    };
+                    return View(model);
                 }
             }
             catch (WebApiExceptions ex)
@@ -63,13 +78,13 @@ namespace StudyDS_web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateEv(Event ev)
+        public async Task<IActionResult> UpdateEv(EventFormViewModel model)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    await webApiExecuter.InvokePut($"events/{ev.EventId}", ev);
+                    await webApiExecuter.InvokePut($"events/{model.Event.EventId}", model.Event);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (WebApiExceptions ex)
@@ -77,7 +92,8 @@ namespace StudyDS_web.Controllers
                     HandleWebApiException (ex);
                 }
             }
-            return View();
+            model.Subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects");
+            return View(model);
         }
 
         public async Task<IActionResult> DeleteEv(int eventId)
