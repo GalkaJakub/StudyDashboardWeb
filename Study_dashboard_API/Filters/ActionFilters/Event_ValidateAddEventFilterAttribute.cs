@@ -32,17 +32,6 @@ namespace Study_dashboard_API.Filters.ActionFilters
             }
             else
             {
-                var validateEv = db.Events.FirstOrDefault(x => x.Name == ev.Name && x.UserId == userId);
-                if (validateEv != null && validateEv.UserId == userId)
-                {
-                    context.ModelState.AddModelError("Event", "Event already exist");
-                    var problemDetails = new ValidationProblemDetails(context.ModelState)
-                    {
-                        Status = StatusCodes.Status400BadRequest
-                    };
-                    context.Result = new BadRequestObjectResult(problemDetails);
-                }
-
                 if (ev.SubjectId != null)
                 {
                     var validateSubject = db.Subjects.FirstOrDefault(x => x.SubjectId == ev.SubjectId && x.UserId == userId);

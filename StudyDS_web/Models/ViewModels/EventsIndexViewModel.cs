@@ -1,6 +1,4 @@
-﻿using Study_dashboard_API.Models;
-
-namespace StudyDS_web.Models.ViewModels
+﻿namespace StudyDS_web.Models.ViewModels
 {
     public class EventsIndexViewModel
     {

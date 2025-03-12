@@ -11,7 +11,6 @@ namespace Study_dashboard_API.Models
         public int EventId { get; set; }
         [Required]
         public string? Name { get; set; }
-        [Required]
         public string? Description { get; set; }
         [Required]
         [Range(0, 2)]

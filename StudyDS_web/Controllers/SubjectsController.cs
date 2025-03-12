@@ -18,10 +18,6 @@ namespace StudyDS_web.Controllers
             return View(await webApiExecuter.InvokeGet<List<Subject>>("subjects"));
         }
 
-        public IActionResult addSubject()
-        {
-            return View();
-        }
         [HttpPost]
         public async Task<IActionResult> addSubject(Subject subject)
         {
@@ -41,7 +37,8 @@ namespace StudyDS_web.Controllers
                 }
 
             }
-            return View(subject);
+            var subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects");
+            return View("Index", subjects);
         }
 
         public async Task<IActionResult> DeleteSub(int subjectId)
@@ -57,6 +54,9 @@ namespace StudyDS_web.Controllers
                 var subject = await webApiExecuter.InvokeGet<Subject>($"subjects/{subjectId}");
                 if (subject != null)
                 {
+                    if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                        return PartialView("UpdateSub", subject);
+
                     return View(subject);
                 }
             }

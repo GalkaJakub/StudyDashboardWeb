@@ -15,8 +15,22 @@ namespace StudyDS_web.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await webApiExecuter.InvokeGet<List<Event>>("events")); 
+            var events = await webApiExecuter.InvokeGet<List<Event>>("events");
+            var subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects");
+
+            var viewModel = new EventsIndexViewModel
+            {
+                Events = events,
+                Form = new EventFormViewModel
+                {
+                    Event = new Event(),
+                    Subjects = subjects
+                }
+            };
+
+            return View(viewModel);
         }
+
 
         public async Task<IActionResult> addEvent()
         {
@@ -55,26 +69,19 @@ namespace StudyDS_web.Controllers
 
         public async Task<IActionResult> UpdateEv(int eventId)
         {
-            try
-            {
-                var ev = await webApiExecuter.InvokeGet<Event>($"events/{eventId}");
-                if (ev != null)
-                {
-                    var model = new EventFormViewModel
-                    {
-                        Event = ev,
-                        Subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects")
-                    };
-                    return View(model);
-                }
-            }
-            catch (WebApiExceptions ex)
-            {
-                HandleWebApiException(ex);
-                return View();
-            }
+            var ev = await webApiExecuter.InvokeGet<Event>($"events/{eventId}");
+            if (ev == null) return NotFound();
 
-            return NotFound();
+            var model = new EventFormViewModel
+            {
+                Event = ev,
+                Subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects")
+            };
+
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                return PartialView("UpdateEv", model);
+
+            return View(model);
         }
 
         [HttpPost]
@@ -89,7 +96,7 @@ namespace StudyDS_web.Controllers
                 }
                 catch (WebApiExceptions ex)
                 {
-                    HandleWebApiException (ex);
+                    HandleWebApiException(ex);
                 }
             }
             model.Subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects");

@@ -1,6 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Przedmioty";
-}
+﻿
 @model Subject
 
 <h3>Edit Subject</h3>
@@ -15,7 +13,7 @@
             <label asp-for="Name" class="col-form-label">Nazwa</label>
         </div>
         <div class="col-6">
-            <input type="text" asp-for="Name" class="form-control" />
+            <input type="text" asp-for="Name" class="form-control" required />
         </div>
 
     </div>
@@ -35,7 +33,7 @@
             <label asp-for="Ects" class="col-form-label">Ilość ECTS</label>
         </div>
         <div class="col-6">
-            <input type="number" asp-for="Ects" class="form-control" min="1" />
+            <input type="number" asp-for="Ects" class="form-control" min="1" required />
         </div>
     </div>
     <div class="mb-3 row">

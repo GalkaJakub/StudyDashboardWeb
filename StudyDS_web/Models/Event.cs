@@ -7,9 +7,10 @@ namespace StudyDS_web.Models
 {
     public class Event
     {
+        [Required]
         public int EventId { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string? Description { get; set; }
         public DateTime Date { get; set; } = DateTime.UtcNow.Date;
         public PriorityLevelEnum PriorityLevel { get; set; }
         public string? SubjectName { get; set; }

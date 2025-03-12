@@ -28,19 +28,6 @@ namespace Study_dashboard_API.Filters.ActionFilters
                 };
                 context.Result = new BadRequestObjectResult(problemDetails);
             }
-            else
-            {
-                var validateSubject = db.Subjects.FirstOrDefault(x => x.Name.ToLower() == subject.Name.ToLower());
-                if (validateSubject != null)
-                {
-                    context.ModelState.AddModelError("Subject", "Subject already exist");
-                    var problemDetails = new ValidationProblemDetails(context.ModelState)
-                    {
-                        Status = StatusCodes.Status400BadRequest
-                    };
-                    context.Result = new BadRequestObjectResult(problemDetails);
-                }
-            }
         }
     }
 }

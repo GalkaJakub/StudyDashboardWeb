@@ -3,7 +3,8 @@ using StudyDS_web.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddSessionStateTempDataProvider();
 builder.Services.AddHttpClient("StudyApi", client =>
 {
     client.BaseAddress = new Uri("https://localhost:7185/api/");
