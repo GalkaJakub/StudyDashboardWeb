@@ -1,6 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
 namespace StudyDS_web.Models
 {
@@ -16,5 +14,18 @@ namespace StudyDS_web.Models
         [Range(0, 2)]
         public PriorityLevelEnum PriorityLevel { get; set; }
         public int UserId { get; set; }
+        public PassingType? PassingType { get; set; }
     }
+}
+
+public enum PassingType
+{
+    [Display(Name = "Egzamin")]
+    exam,
+    [Display(Name = "Kolokwium")]
+    test,
+    [Display(Name = "Prezentacja")]
+    prezentation,
+    [Display(Name = "Wypracowanie")]
+    essay,
 }

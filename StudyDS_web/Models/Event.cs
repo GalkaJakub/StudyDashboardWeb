@@ -1,7 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.Serialization;
-using System.Text.Json.Serialization;
 
 namespace StudyDS_web.Models
 {
@@ -15,7 +12,7 @@ namespace StudyDS_web.Models
         public PriorityLevelEnum PriorityLevel { get; set; }
         public string? SubjectName { get; set; }
         public bool IaActive { get; set; } = true;
-        //public EventType Type { get; set; } = EventType.Exam;
+        public EventType? Type { get; set; }
         public int? SubjectId { get; set; }
 
     }
@@ -23,18 +20,26 @@ namespace StudyDS_web.Models
     public enum PriorityLevelEnum
     {
         [Display(Name = "niski")]
-        Low = 0,
+        Low,
         [Display(Name = "średni")]
-        Medium = 1,
+        Medium,
         [Display(Name = "wysoki")]
-        High = 2
+        High,
     }
 
     public enum EventType
     {
-        Exam = 0,
-        Test = 1,
-        Project = 2,
-        Presentation = 3,
+        [Display(Name = "Egzamin")]
+        Exam,
+        [Display(Name = "Kolokwium")]
+        Test,
+        [Display(Name = "Projekt")]
+        Project,
+        [Display(Name = "Prezentacja")]
+        Presentation,
+        [Display(Name = "Zadanie domowe")]
+        Homework,
+        [Display(Name = "Sprawozdanie")]
+        Report
     }
 }

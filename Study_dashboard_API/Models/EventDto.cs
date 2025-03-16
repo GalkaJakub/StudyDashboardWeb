@@ -9,6 +9,7 @@
         public PriorityLevelEnum PriorityLevel { get; set; }
         public string? SubjectName { get; set; }
         public bool IaActive { get; set; } = true;
+        public EventType? Type { get; set; }
     }
 
 }

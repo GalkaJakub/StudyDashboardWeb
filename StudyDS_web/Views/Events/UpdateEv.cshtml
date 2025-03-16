@@ -15,7 +15,6 @@
     <div class="mb-3">
             <label asp-for="Event.PriorityLevel" class="form-label">Priorytet</label>
             <input type="range" asp-for="Event.PriorityLevel" class="form-range" min="0" max="2" step="1" id="priorityRange" value="@( (int)Model.Event.PriorityLevel )" oninput="updatePriorityValue(this.value)" />
-
             <span id="priorityValue" class="fw-bold"></span>
     </div>
     <div class="mb-3">
@@ -31,6 +30,13 @@
             {
                 <option value="@subject.SubjectId">@subject.Name</option>
             }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Event.Type" class="form-label">Typ</label>
+        <select asp-for="Event.Type" class="form-select w-100" asp-items="Model.EventTypeOptions">
+            <option value="">Brak</option>
         </select>
     </div>
 

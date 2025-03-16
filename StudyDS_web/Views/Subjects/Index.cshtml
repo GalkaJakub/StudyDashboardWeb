@@ -7,19 +7,19 @@
 
 @if(Model != null)
 {
-    <div class="row">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach (var subject in Model)
         {
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-body">
+            <div class="col">
+                <div class="card h-100 position-relative">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">@subject.Name</h5>
                         <p class="card-text"><strong>Ilość ECTS:</strong> @subject.Ects</p>
                         <p class="card-text"><strong>Priorytet:</strong> @Html.DisplayFor(model => subject.PriorityLevel)</p>
-                        <p class="card-text"><strong>ID:</strong> @subject.SubjectId</p>
-                        <div class="d-flex justify-content-between">
+                        <p class="card-text"><strong>Zaliczenie:</strong> @subject.PassingType</p>
+                        <div class="mt-auto d-flex justify-content-between">
                             <a href="#" class="btn btn-primary edit-subject-btn" data-id="@subject.SubjectId">Edytuj</a>
-                            <a class="btn btn-danger" asp-action="DeleteSub" asp-route-subjectId="@subject.SubjectId">Delete</a>
+                            <a class="btn btn-danger" asp-action="DeleteSub" asp-route-subjectId="@subject.SubjectId">Usuń</a>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
     <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addSubjectModal">Nowy przedmiot</button>
 
     <div class="modal fade" id="addSubjectModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Dodaj przedmiot</h5>
@@ -56,61 +56,4 @@
         </div>
     </div>
 
-}
-
-@section Scripts {
-    <script>
-        const priorityMap = {
-            "0": "Niski",
-            "1": "Średni",
-            "2": "Wysoki"
-        };
-
-        function updatePriorityValue(val) {
-            document.getElementById("priorityValue").innerText = priorityMap[val] ?? val;
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const slider = document.getElementById("priorityRange");
-            if (slider) {
-                updatePriorityValue(slider.value);
-                slider.addEventListener("input", function () {
-                    updatePriorityValue(this.value);
-                });
-            }
-
-            const editButtons = document.querySelectorAll(".edit-subject-btn");
-
-            editButtons.forEach(button => {
-                button.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const subjectId = this.dataset.id;
-
-                    fetch(`/Subjects/UpdateSub?subjectId=${subjectId}`, {
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
-                        .then(response => response.text())
-                        .then(html => {
-                            const modalContent = document.getElementById("editSubjectModalContent");
-                            modalContent.innerHTML = html;
-
-                            const slider = modalContent.querySelector("#priorityRange");
-                            const priorityText = modalContent.querySelector("#priorityValue");
-
-                            if (slider && priorityText) {
-                                priorityText.innerText = priorityMap[slider.value] ?? slider.value;
-                                slider.addEventListener("input", function () {
-                                    priorityText.innerText = priorityMap[this.value] ?? this.value;
-                                });
-                            }
-
-                            const modal = new bootstrap.Modal(document.getElementById("editSubjectModal"));
-                            modal.show();
-                        });
-                });
-            });
-        });
-    </script>
 }

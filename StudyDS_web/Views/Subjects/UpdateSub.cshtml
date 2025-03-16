@@ -1,44 +1,23 @@
-﻿
-@model Subject
-
-<h3>Edit Subject</h3>
-<br />
+﻿@model Subject
 
 <form method="post" asp-action="UpdateSub">
     <input type="hidden" asp-for="UserId" />
     <input type="hidden" asp-for="SubjectId" />
     <div class="text-danger" asp-validation-summary="All"></div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="Name" class="col-form-label">Nazwa</label>
-        </div>
-        <div class="col-6">
-            <input type="text" asp-for="Name" class="form-control" required />
-        </div>
-
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Nazwa</label>
+        <input type="text" asp-for="Name" class="form-control w-100" required />
     </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="PriorityLevel" class="col-form-label">Priorytet</label>
-        </div>
-        <div class="col-6">
-            <input type="range" asp-for="PriorityLevel" class="form-range" min="0" max="2" step="1" id="customRange3" value="@( (int)Model.PriorityLevel )" />
-        </div>
-        <div class="col">
-            <span class="text-danger" asp-validation-for="PriorityLevel"></span>
-        </div>
+    <div class="mb-3">
+        <label asp-for="PriorityLevel" class="form-label">Priorytet</label>
+            <input type="range" asp-for="PriorityLevel" class="form-range" min="0" max="2" step="1" id="priorityRange" value="@( (int)Model.PriorityLevel )" oninput="updatePriorityValue(this.value)" />
+            <span id="priorityValue" class="fw-bold"></span>
     </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="Ects" class="col-form-label">Ilość ECTS</label>
-        </div>
-        <div class="col-6">
-            <input type="number" asp-for="Ects" class="form-control" min="1" required />
-        </div>
+    <div class="mb-3">
+        <label asp-for="Ects" class="form-label">Ilość ECTS</label>
+        <input type="number" asp-for="Ects" class="form-control w-100" min="1" required />
     </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <input type="submit" class="btn-group btn-primary" value="Submit" />
-        </div>
+    <div class="text-end">
+        <input type="submit" class="btn btn-primary" value="Zapisz" />
     </div>
 </form>

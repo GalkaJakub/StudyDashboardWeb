@@ -2,6 +2,9 @@
 using StudyDS_web.Models;
 using StudyDS_web.Data;
 using StudyDS_web.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 
 namespace StudyDS_web.Controllers
 {
@@ -27,6 +30,17 @@ namespace StudyDS_web.Controllers
                     Subjects = subjects
                 }
             };
+            viewModel.Form.EventTypeOptions = Enum.GetValues(typeof(EventType))
+            .Cast<EventType>()
+            .Select(e => new SelectListItem
+            {
+                Value = e.ToString(),
+                Text = e.GetType()
+                        .GetMember(e.ToString())
+                        .First()
+                        .GetCustomAttribute<DisplayAttribute>()?.Name ?? e.ToString()
+            })
+            .ToList();
 
             return View(viewModel);
         }
@@ -39,7 +53,6 @@ namespace StudyDS_web.Controllers
                 Event = new Event(),
                 Subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects")
             };
-
             return View(model);
         }
 
@@ -77,6 +90,18 @@ namespace StudyDS_web.Controllers
                 Event = ev,
                 Subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects")
             };
+
+            model.EventTypeOptions = Enum.GetValues(typeof(EventType))
+            .Cast<EventType>()
+            .Select(e => new SelectListItem
+            {
+                Value = e.ToString(),
+                Text = e.GetType()
+                        .GetMember(e.ToString())
+                        .First()
+                        .GetCustomAttribute<DisplayAttribute>()?.Name ?? e.ToString()
+            })
+            .ToList();
 
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
                 return PartialView("UpdateEv", model);

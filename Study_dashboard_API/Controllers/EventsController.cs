@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using Study_dashboard_API.Data;
 using Study_dashboard_API.Filters.ActionFilters;
@@ -38,7 +37,8 @@ namespace Study_dashboard_API.Controllers
                 Date = e.Date,
                 PriorityLevel = e.PriorityLevel,
                 SubjectName = e.Subject?.Name,
-                IaActive = e.IaActive
+                IaActive = e.IaActive,
+                Type = e.Type,
             }).ToList();
 
             return Ok(eventDtos);
@@ -73,6 +73,7 @@ namespace Study_dashboard_API.Controllers
             evToUpdate.PriorityLevel = ev.PriorityLevel;
             evToUpdate.SubjectId = ev.SubjectId;
             evToUpdate.Date = ev.Date;
+            evToUpdate.Type = ev.Type;
             db.SaveChanges();
             return NoContent();
         }

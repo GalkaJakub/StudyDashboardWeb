@@ -3,11 +3,6 @@
     ViewData["Title"] = "Wydarzenia";
 }
 @model EventsIndexViewModel
-
-<style>
-
-
-</style>
 <h3>Wydarzenia</h3>
 
 @if (Model != null)
@@ -41,6 +36,12 @@
                         <p class="card-text mb-1"><strong>Czas wykonania:</strong> @ev.Date.ToString("dd/MM/yyyy")</p>
                         <p class="card-text mb-1"><strong>Priorytet:</strong> @Html.DisplayFor(model => ev.PriorityLevel)</p>
                         <p class="card-text mb-3"><strong>Przedmiot:</strong> @(ev.SubjectName ?? "Brak")</p>
+                        @if (ev.Type != null)
+                        {
+                            <p class="card-text mb-3"><strong>Typ:</strong> @Html.DisplayFor(model => ev.Type)</p>
+                        }
+
+
 
                         <div class="mt-auto d-flex justify-content-between">
                             <a href="#" class="btn btn-primary edit-event-btn" data-id="@ev.EventId">Edytuj</a>
@@ -54,9 +55,8 @@
 
 
     <br />
-    <div class="mb-5">
-        <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#eventModal">Nowe wydarzenie</a>
-    </div>
+    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#eventModal">Nowe wydarzenie</button>
+
 
     <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
@@ -99,9 +99,3 @@
     </div>
 
 }
-
-
-@* @section Scripts {
-    <script src="~/js/Event.js" asp-append-version="true"></script>
-} *@
-

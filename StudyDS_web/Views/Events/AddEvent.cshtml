@@ -1,4 +1,7 @@
 ﻿@using StudyDS_web.Models.ViewModels
+@using System.ComponentModel.DataAnnotations
+@using System.Reflection
+
 @model EventFormViewModel
 
 <form method="post" asp-action="addEvent">
@@ -35,6 +38,15 @@
             }
         </select>
     </div>
+
+    <div class="mb-3">
+        <label asp-for="Event.Type" class="form-label">Typ</label>
+        <select asp-for="Event.Type" class="form-select w-100" asp-items="Model.EventTypeOptions">
+            <option value="">Brak</option>
+        </select>
+    </div>
+
+
 
     <div class="text-end">
         <input type="submit" class="btn btn-primary" value="Zapisz" />

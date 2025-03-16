@@ -49,7 +49,7 @@ namespace Study_dashboard_API.Migrations
                     b.Property<int?>("SubjectId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Type")
+                    b.Property<int?>("Type")
                         .HasColumnType("int");
 
                     b.Property<int?>("UserId")
@@ -73,7 +73,6 @@ namespace Study_dashboard_API.Migrations
                             Name = "sprawdzian z pic",
                             PriorityLevel = 1,
                             SubjectId = 1,
-                            Type = 0,
                             UserId = 1
                         },
                         new
@@ -85,7 +84,6 @@ namespace Study_dashboard_API.Migrations
                             Name = "wejsciowka",
                             PriorityLevel = 1,
                             SubjectId = 2,
-                            Type = 0,
                             UserId = 1
                         },
                         new
@@ -97,7 +95,6 @@ namespace Study_dashboard_API.Migrations
                             Name = "projekt",
                             PriorityLevel = 1,
                             SubjectId = 3,
-                            Type = 0,
                             UserId = 1
                         },
                         new
@@ -109,7 +106,6 @@ namespace Study_dashboard_API.Migrations
                             Name = "kolokwium",
                             PriorityLevel = 2,
                             SubjectId = 7,
-                            Type = 0,
                             UserId = 3
                         });
                 });
@@ -128,6 +124,9 @@ namespace Study_dashboard_API.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PassingType")
+                        .HasColumnType("int");
 
                     b.Property<int>("PriorityLevel")
                         .HasColumnType("int");

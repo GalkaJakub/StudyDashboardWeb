@@ -16,14 +16,16 @@ namespace Study_dashboard_API.Models
         [Range(0, 2)]
         public PriorityLevelEnum PriorityLevel { get; set; }
         public int? UserId { get; set; }
+        public PassingType? PassingType { get; set; }
         [JsonIgnore]
         public User? User { get; set; }
     }
 
-    public enum PassFormat
+    public enum PassingType
     {
-        Exam,
-        Test,
-        Laboratory
+        exam,
+        test,
+        prezentation,
+        essay,
     }
 }

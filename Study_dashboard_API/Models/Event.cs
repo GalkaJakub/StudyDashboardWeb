@@ -19,7 +19,7 @@ namespace Study_dashboard_API.Models
         public DateTime Date { get; set; }
         public int? UserId { get; set; }
         public int? SubjectId { get; set; }
-        public EventType Type { get; set; } = EventType.Exam;
+        public EventType? Type { get; set; }
         public bool IaActive { get; set; } = true;
         [JsonIgnore]
         public User? User { get; set; }
@@ -28,16 +28,18 @@ namespace Study_dashboard_API.Models
 
     public enum PriorityLevelEnum
     {
-        Low = 0,
-        Medium = 1,
-        High = 2
+        Low,
+        Medium,
+        High
     }
 
     public enum EventType
     {
-        Exam = 0,
-        Test = 1,
-        Project = 2,
-        Presentation = 3,
+        Exam,
+        Test,
+        Project,
+        Presentation,
+        Homework,
+        Report
     }
 }

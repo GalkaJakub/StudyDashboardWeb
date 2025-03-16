@@ -44,6 +44,12 @@ body {
     transition: max-height 0.3s ease;
 }
 
+.custom-navbar {
+    background-color: #def2ff !important;
+    color: white;
+}
+
+
 .description-full {
     max-height: none;
 }
