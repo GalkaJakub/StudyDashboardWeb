@@ -4,28 +4,47 @@
 }
 @model EventsIndexViewModel
 
+<style>
+
+
+</style>
 <h3>Wydarzenia</h3>
 
 @if (Model != null)
 {
-    <div class="row">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach (var ev in Model.Events)
         {
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
+            <div class="col">
+                <div class="card h-100 position-relative">
                     <div class="position-absolute top-0 end-0 p-3">
                         <input type="checkbox" class="form-check-input mark-complete" data-id="@ev.EventId" title="Zakończono" />
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">@ev.Name</h5>
-                        <p class="card-text"><strong>Opis:</strong> @(ev.Description ?? "Brak")</p>
-                        <p class="card-text"><strong>Czas wykonania:</strong> @ev.Date.ToString("dd/MM/yyyy")</p>
-                        <p class="card-text"><strong>Priorytet:</strong> @Html.DisplayFor(model => ev.PriorityLevel)</p>
-                        <p class="card-text"><strong>Przedmiot:</strong> @(ev.SubjectName ?? "Brak")</p>
-                        <div class="d-flex justify-content-between">
+
+                        <div class="mb-2">
+                            <p class="card-text description-preview mb-1" id="desc-@ev.EventId">
+                                <strong>Opis:</strong> @(ev.Description ?? "Brak")
+                            </p>
+                            <a href="#" class="btn btn-link p-0 show-description d-none"
+                               data-id="@ev.EventId"
+                               data-name="@ev.Name"
+                               data-description="@ev.Description"
+                               data-bs-toggle="modal"
+                               data-bs-target="#descriptionModal">
+                                Pokaż więcej
+                            </a>
+                        </div>
+
+                        <p class="card-text mb-1"><strong>Czas wykonania:</strong> @ev.Date.ToString("dd/MM/yyyy")</p>
+                        <p class="card-text mb-1"><strong>Priorytet:</strong> @Html.DisplayFor(model => ev.PriorityLevel)</p>
+                        <p class="card-text mb-3"><strong>Przedmiot:</strong> @(ev.SubjectName ?? "Brak")</p>
+
+                        <div class="mt-auto d-flex justify-content-between">
                             <a href="#" class="btn btn-primary edit-event-btn" data-id="@ev.EventId">Edytuj</a>
-                            <a class="btn btn-danger" asp-action="DeleteEv" asp-route-eventId="@ev.EventId">Delete</a>
+                            <a class="btn btn-danger" asp-action="DeleteEv" asp-route-eventId="@ev.EventId">Usuń</a>
                         </div>
                     </div>
                 </div>
@@ -33,13 +52,14 @@
         }
     </div>
 
+
     <br />
     <div class="mb-5">
         <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#eventModal">Nowe wydarzenie</a>
     </div>
 
     <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Nowe wydarzenie</h5>
@@ -53,7 +73,7 @@
     </div>
 
     <div class="modal fade" id="editEventModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Edytuj wydarzenie</h5>
@@ -65,64 +85,23 @@
         </div>
     </div>
 
+    <div class="modal fade" id="descriptionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="descriptionModalTitle">Opis</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+                </div>
+                <div class="modal-body" id="descriptionModalBody">
+                </div>
+            </div>
+        </div>
+    </div>
+
 }
 
 
-@section Scripts {
-    <script>
-        const priorityMap = {
-            "0": "Niski",
-            "1": "Średni",
-            "2": "Wysoki"
-        };
+@* @section Scripts {
+    <script src="~/js/Event.js" asp-append-version="true"></script>
+} *@
 
-        function updatePriorityValue(val) {
-            document.getElementById("priorityValue").innerText = priorityMap[val] ?? val;
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const slider = document.getElementById("priorityRange");
-            updatePriorityValue(slider.value);
-
-            slider.addEventListener("input", function () {
-                updatePriorityValue(this.value);
-            });
-
-            const editButtons = document.querySelectorAll(".edit-event-btn");
-            const eventModalEl = document.getElementById("eventModal");
-
-            editButtons.forEach(button => {
-                button.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const eventId = this.dataset.id;
-
-                    fetch(`/Events/UpdateEv?eventId=${eventId}`, {
-                        headers: {
-                            "X-Requested-With": "XMLHttpRequest"
-                        }
-                    })
-                        .then(response => response.text())
-                        .then(html => {
-                            const modalContent = document.getElementById("editEventModalContent");
-                            modalContent.innerHTML = html;
-
-                            const slider = modalContent.querySelector("#priorityRange");
-                            const priorityText = modalContent.querySelector("#priorityValue");
-
-                            if (slider && priorityText) {
-                                priorityText.innerText = priorityMap[slider.value] ?? slider.value;
-                                slider.addEventListener("input", function () {
-                                    priorityText.innerText = priorityMap[this.value] ?? this.value;
-                                });
-                            }
-
-                            const modal = new bootstrap.Modal(document.getElementById("editEventModal"));
-                            modal.show();
-                        });
-                });
-            });
-
-        });
-    </script>
-}

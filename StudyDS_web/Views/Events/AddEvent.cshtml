@@ -1,63 +1,42 @@
 ﻿@using StudyDS_web.Models.ViewModels
-
 @model EventFormViewModel
 
-
 <form method="post" asp-action="addEvent">
-    <div class="text-danger" asp-validation-summary="All"></div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="Event.Name" class="col-form-label">Nazwa</label>
-        </div>
-        <div class="col-6">
-            <input type="text" asp-for="Event.Name" class="form-control" required />
-        </div>
+    <div class="text-danger mb-3" asp-validation-summary="All"></div>
+
+    <div class="mb-3">
+        <label asp-for="Event.Name" class="form-label">Nazwa</label>
+        <input type="text" asp-for="Event.Name" class="form-control w-100" required />
     </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="Event.Description" class="col-form-label">Opis</label>
-        </div>
-        <div class="col-6">
-            <textarea asp-for="Event.Description" class="form-control" rows="5"></textarea>
-        </div>
+
+    <div class="mb-3">
+        <label asp-for="Event.Description" class="form-label">Opis</label>
+        <textarea asp-for="Event.Description" class="form-control w-100" rows="5"></textarea>
     </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="Event.PriorityLevel" class="col-form-label">Priorytet</label>
-        </div>
-        <div class="col-5">
-            <input type="range" asp-for="Event.PriorityLevel" class="form-range" min="0" max="2" step="1" id="priorityRange" oninput="updatePriorityValue(this.value)" />
-        </div>
-        <div class="col-2">
-            <span id="priorityValue" class="fw-bold"></span>
-        </div>
+
+    <div class="mb-3">
+        <label asp-for="Event.PriorityLevel" class="form-label">Priorytet</label>
+        <input type="range" asp-for="Event.PriorityLevel" class="form-range" min="0" max="2" step="1" id="priorityRange" oninput="updatePriorityValue(this.value)" />
+        <span id="priorityValue" class="fw-bold d-block mt-1"></span>
     </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <label asp-for="Event.Date" class="col-form-label">Czas wykonania</label>
-        </div>
-        <div class="col-6">
-            <input type="date" asp-for="Event.Date" class="form-control" min="@DateTime.Now.ToString("yyyy-MM-dd")" />
-        </div>
+
+    <div class="mb-3">
+        <label asp-for="Event.Date" class="form-label">Czas wykonania</label>
+        <input type="date" asp-for="Event.Date" class="form-control w-100" min="@DateTime.Now.ToString("yyyy-MM-dd")" />
     </div>
-    <div class="mb-3 row">
-        <label asp-for="Event.SubjectId" class="col-form-label col-2">Przedmiot</label>
-        <div class="col-6">
-            <select asp-for="Event.SubjectId" class="form-select">
-                <option value="">Brak</option>
-                @foreach (var subject in Model.Subjects)
-                {
-                    <option value="@subject.SubjectId">@subject.Name</option>
-                }
-            </select>
-        </div>
+
+    <div class="mb-3">
+        <label asp-for="Event.SubjectId" class="form-label">Przedmiot</label>
+        <select asp-for="Event.SubjectId" class="form-select w-100">
+            <option value="">Brak</option>
+            @foreach (var subject in Model.Subjects)
+            {
+                <option value="@subject.SubjectId">@subject.Name</option>
+            }
+        </select>
     </div>
-    <div class="mb-3 row">
-        <div class="col-2">
-            <input type="submit" class="btn-group btn-primary" value="Submit" />
-        </div>
+
+    <div class="text-end">
+        <input type="submit" class="btn btn-primary" value="Zapisz" />
     </div>
 </form>
-
-
-
