@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudyDS_web.Models;
 using StudyDS_web.Data;
-using Microsoft.AspNetCore.Authorization;
+using StudyDS_web.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Reflection;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudyDS_web.Controllers
 {
@@ -15,7 +18,30 @@ namespace StudyDS_web.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await webApiExecuter.InvokeGet<List<Subject>>("subjects"));
+            var subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects");
+
+            var model = new SubjectIndexViewModel
+            {
+                Subjects = subjects,
+                formViewModel = new SubjectFormViewModel
+                {
+                    Subject = new Subject()
+                }
+            };
+
+            model.formViewModel.SubjectTypeOptions = Enum.GetValues(typeof(PassingType))
+            .Cast<PassingType>()
+            .Select(e => new SelectListItem
+            {
+                Value = e.ToString(),
+                Text = e.GetType()
+                        .GetMember(e.ToString())
+                        .First()
+                        .GetCustomAttribute<DisplayAttribute>()?.Name ?? e.ToString()
+            })
+            .ToList();
+
+            return View(model);
         }
 
         [HttpPost]
@@ -54,8 +80,25 @@ namespace StudyDS_web.Controllers
                 var subject = await webApiExecuter.InvokeGet<Subject>($"subjects/{subjectId}");
                 if (subject != null)
                 {
+                    var model = new SubjectFormViewModel
+                    {
+                        Subject = subject,
+                    };
+
+                    model.SubjectTypeOptions = Enum.GetValues(typeof(PassingType))
+                    .Cast<PassingType>()
+                    .Select(e => new SelectListItem
+                    {
+                        Value = e.ToString(),
+                        Text = e.GetType()
+                                .GetMember(e.ToString())
+                                .First()
+                                .GetCustomAttribute<DisplayAttribute>()?.Name ?? e.ToString()
+                    })
+                    .ToList();
+
                     if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
-                        return PartialView("UpdateSub", subject);
+                        return PartialView("UpdateSub", model);
 
                     return View(subject);
                 }
@@ -86,8 +129,6 @@ namespace StudyDS_web.Controllers
             }
             return View(subject);
         }
-
-
 
     }
 }

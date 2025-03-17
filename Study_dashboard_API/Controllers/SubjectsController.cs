@@ -56,6 +56,7 @@ namespace Study_dashboard_API.Controllers
             subjectToUpdate.PriorityLevel = subject.PriorityLevel;
             subjectToUpdate.Ects = subject.Ects;
             subjectToUpdate.Name = subject.Name;
+            subjectToUpdate.PassingType = subject.PassingType;
             db.SaveChanges();
 
             return NoContent();

@@ -1,21 +1,28 @@
-﻿@model Subject
+﻿@using StudyDS_web.Models.ViewModels
+@model SubjectFormViewModel
 
 <form method="post" asp-action="UpdateSub">
-    <input type="hidden" asp-for="UserId" />
-    <input type="hidden" asp-for="SubjectId" />
+    <input type="hidden" asp-for="Subject.UserId" />
+    <input type="hidden" asp-for="Subject.SubjectId" />
     <div class="text-danger" asp-validation-summary="All"></div>
     <div class="mb-3">
-        <label asp-for="Name" class="form-label">Nazwa</label>
-        <input type="text" asp-for="Name" class="form-control w-100" required />
+        <label asp-for="Subject.Name" class="form-label">Nazwa</label>
+        <input type="text" asp-for="Subject.Name" class="form-control w-100" required />
     </div>
     <div class="mb-3">
-        <label asp-for="PriorityLevel" class="form-label">Priorytet</label>
-            <input type="range" asp-for="PriorityLevel" class="form-range" min="0" max="2" step="1" id="priorityRange" value="@( (int)Model.PriorityLevel )" oninput="updatePriorityValue(this.value)" />
-            <span id="priorityValue" class="fw-bold"></span>
+        <label asp-for="Subject.PriorityLevel" class="form-label">Priorytet</label>
+        <input type="range" asp-for="Subject.PriorityLevel" class="form-range" min="0" max="2" step="1" id="priorityRange" oninput="updatePriorityValue(this.value)" />
+        <span id="priorityValue" class="fw-bold"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="Ects" class="form-label">Ilość ECTS</label>
-        <input type="number" asp-for="Ects" class="form-control w-100" min="1" required />
+        <label asp-for="Subject.Ects" class="form-label">Ilość ECTS</label>
+        <input type="number" asp-for="Subject.Ects" class="form-control w-100" min="1" required />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Subject.PassingType" class="form-label">Rodzaj zaliczenia</label>
+        <select asp-for="Subject.PassingType" class="form-select w-100" asp-items="Model.SubjectTypeOptions">
+            <option value="">Brak</option>
+        </select>
     </div>
     <div class="text-end">
         <input type="submit" class="btn btn-primary" value="Zapisz" />

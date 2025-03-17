@@ -1,14 +1,15 @@
-﻿@{
+﻿@using StudyDS_web.Models.ViewModels
+@{
     ViewData["Title"] = "Przedmioty";
 }
-@model List<Subject>
+@model SubjectIndexViewModel
 
 <h3>Przedmioty</h3>
 
 @if(Model != null)
 {
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        @foreach (var subject in Model)
+        @foreach (var subject in Model.Subjects)
         {
             <div class="col">
                 <div class="card h-100 position-relative">
@@ -16,7 +17,10 @@
                         <h5 class="card-title">@subject.Name</h5>
                         <p class="card-text"><strong>Ilość ECTS:</strong> @subject.Ects</p>
                         <p class="card-text"><strong>Priorytet:</strong> @Html.DisplayFor(model => subject.PriorityLevel)</p>
-                        <p class="card-text"><strong>Zaliczenie:</strong> @subject.PassingType</p>
+                        @if (subject.PassingType != null)
+                        {
+                            <p class="card-text mb-3"><strong>Zaliczenie:</strong> @Html.DisplayFor(model => subject.PassingType)</p>
+                        }
                         <div class="mt-auto d-flex justify-content-between">
                             <a href="#" class="btn btn-primary edit-subject-btn" data-id="@subject.SubjectId">Edytuj</a>
                             <a class="btn btn-danger" asp-action="DeleteSub" asp-route-subjectId="@subject.SubjectId">Usuń</a>
@@ -37,14 +41,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
                 </div>
                 <div class="modal-body">
-                    @await Html.PartialAsync("AddSubject", new Subject())
+                    @await Html.PartialAsync("AddSubject", Model.formViewModel)
                 </div>
             </div>
         </div>
     </div>
 
     <div class="modal fade" id="editSubjectModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Edytuj wydarzenie</h5>
