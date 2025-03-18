@@ -6,10 +6,7 @@
     };
 
     function updatePriorityValue(val) {
-        const elem = document.getElementById("priorityValue");
-        if (elem) {
-            elem.innerText = priorityMap[val] ?? val;
-        }
+        document.getElementById("priorityValue").innerText = priorityMap[val] ?? val;
     }
 
     const editButtons = document.querySelectorAll(".edit-subject-btn");
@@ -40,6 +37,29 @@
                     }
 
                     const modal = new bootstrap.Modal(document.getElementById("editSubjectModal"));
+                    modal.show();
+                });
+        });
+    });
+
+    const editPassButtons = document.querySelectorAll(".edit-pass-subject-btn");
+
+    editPassButtons.forEach(button => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+            const subjectId = this.dataset.id;
+
+            fetch(`/Subjects/PassSub?subjectId=${subjectId}`, {
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            })
+                .then(response => response.text())
+                .then(html => {
+                    const modalContent = document.getElementById("editPassSubjectModalContent");
+                    modalContent.innerHTML = html;
+
+                    const modal = new bootstrap.Modal(document.getElementById("editPassSubjectModal"));
                     modal.show();
                 });
         });

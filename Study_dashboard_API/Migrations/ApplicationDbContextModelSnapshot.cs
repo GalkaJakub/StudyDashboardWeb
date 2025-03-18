@@ -36,7 +36,10 @@ namespace Study_dashboard_API.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IaActive")
+                    b.Property<double?>("Grade")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("IsPassed")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -69,7 +72,7 @@ namespace Study_dashboard_API.Migrations
                             EventId = 1,
                             Date = new DateTime(2025, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Nie zdam! xd",
-                            IaActive = true,
+                            IsPassed = false,
                             Name = "sprawdzian z pic",
                             PriorityLevel = 1,
                             SubjectId = 1,
@@ -80,7 +83,7 @@ namespace Study_dashboard_API.Migrations
                             EventId = 2,
                             Date = new DateTime(2025, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "wejsciowka z avr",
-                            IaActive = true,
+                            IsPassed = false,
                             Name = "wejsciowka",
                             PriorityLevel = 1,
                             SubjectId = 2,
@@ -91,7 +94,7 @@ namespace Study_dashboard_API.Migrations
                             EventId = 3,
                             Date = new DateTime(2025, 3, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "literaki",
-                            IaActive = true,
+                            IsPassed = false,
                             Name = "projekt",
                             PriorityLevel = 1,
                             SubjectId = 3,
@@ -102,7 +105,7 @@ namespace Study_dashboard_API.Migrations
                             EventId = 4,
                             Date = new DateTime(2025, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Nie zdam! xd",
-                            IaActive = true,
+                            IsPassed = false,
                             Name = "kolokwium",
                             PriorityLevel = 2,
                             SubjectId = 7,
@@ -120,6 +123,12 @@ namespace Study_dashboard_API.Migrations
 
                     b.Property<int>("Ects")
                         .HasColumnType("int");
+
+                    b.Property<double?>("Grade")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("IsPassed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -145,6 +154,7 @@ namespace Study_dashboard_API.Migrations
                         {
                             SubjectId = 1,
                             Ects = 5,
+                            IsPassed = false,
                             Name = "Smiw",
                             PriorityLevel = 1,
                             UserId = 1
@@ -153,6 +163,7 @@ namespace Study_dashboard_API.Migrations
                         {
                             SubjectId = 2,
                             Ects = 2,
+                            IsPassed = false,
                             Name = "Smiw lab",
                             PriorityLevel = 1,
                             UserId = 1
@@ -161,6 +172,7 @@ namespace Study_dashboard_API.Migrations
                         {
                             SubjectId = 3,
                             Ects = 3,
+                            IsPassed = false,
                             Name = "Pk 5",
                             PriorityLevel = 1,
                             UserId = 1
@@ -169,6 +181,7 @@ namespace Study_dashboard_API.Migrations
                         {
                             SubjectId = 4,
                             Ects = 1,
+                            IsPassed = false,
                             Name = "Programowanie 4",
                             PriorityLevel = 1,
                             UserId = 2
@@ -177,6 +190,7 @@ namespace Study_dashboard_API.Migrations
                         {
                             SubjectId = 5,
                             Ects = 2,
+                            IsPassed = false,
                             Name = "PBD",
                             PriorityLevel = 1,
                             UserId = 2
@@ -185,6 +199,7 @@ namespace Study_dashboard_API.Migrations
                         {
                             SubjectId = 6,
                             Ects = 1,
+                            IsPassed = false,
                             Name = "Java_web",
                             PriorityLevel = 1,
                             UserId = 3
@@ -193,6 +208,7 @@ namespace Study_dashboard_API.Migrations
                         {
                             SubjectId = 7,
                             Ects = 1,
+                            IsPassed = false,
                             Name = "Tm",
                             PriorityLevel = 1,
                             UserId = 3

@@ -34,7 +34,7 @@ namespace Study_dashboard_API.Filters.ActionFilters
                     var user = db.Users.Find(userId.Value);
                     if (user == null)
                     {
-                        context.ModelState.AddModelError("Id", "User doesn't exist");
+                        context.ModelState.AddModelError("Id", "Użytkonik nie istnieje");
                         var problemDetails = new ValidationProblemDetails(context.ModelState)
                         {
                             Status = StatusCodes.Status404NotFound

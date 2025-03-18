@@ -8,8 +8,9 @@
         public DateTime Date { get; set; }
         public PriorityLevelEnum PriorityLevel { get; set; }
         public string? SubjectName { get; set; }
-        public bool IaActive { get; set; } = true;
+        public bool IsPassed { get; set; } = false;
         public EventType? Type { get; set; }
+        public double? Grade { get; set; }
     }
 
 }

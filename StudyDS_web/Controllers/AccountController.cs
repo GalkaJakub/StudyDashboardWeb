@@ -102,7 +102,7 @@ namespace StudyDS_web.Controllers
                 try
                 {
                     await webApiExecuter.InvokePutPassword("users/updatePassword", model);
-                    return RedirectToAction("Index", "Subjects");
+                    return RedirectToAction("UpdateUser", "Users");
                 }
                 catch (WebApiExceptions ex)
                 {

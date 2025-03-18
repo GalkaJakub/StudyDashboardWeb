@@ -37,8 +37,9 @@ namespace Study_dashboard_API.Controllers
                 Date = e.Date,
                 PriorityLevel = e.PriorityLevel,
                 SubjectName = e.Subject?.Name,
-                IaActive = e.IaActive,
+                IsPassed = e.IsPassed,
                 Type = e.Type,
+                Grade = e.Grade
             }).ToList();
 
             return Ok(eventDtos);
@@ -74,6 +75,8 @@ namespace Study_dashboard_API.Controllers
             evToUpdate.SubjectId = ev.SubjectId;
             evToUpdate.Date = ev.Date;
             evToUpdate.Type = ev.Type;
+            evToUpdate.IsPassed = ev.IsPassed;
+            evToUpdate.Grade = ev.Grade;
             db.SaveChanges();
             return NoContent();
         }

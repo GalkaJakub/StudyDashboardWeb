@@ -7,12 +7,12 @@ namespace StudyDS_web.Models
     {
         [Key]
         public int UserId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Nazwa użytkownika jest wymagana.")]
         public string? Name { get; set; }
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Wprowadź poprawny adres e-mail.")]
         public string? Email { get; set; }
         [User_CorrectPassword]
-        [Required]
+        [Required(ErrorMessage = "Hasło jest wymagane.")]
         public string? Password { get; set; }
     }
 }

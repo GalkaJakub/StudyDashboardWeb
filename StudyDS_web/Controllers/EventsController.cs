@@ -134,6 +134,41 @@ namespace StudyDS_web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> UpdatePassEv(int eventId)
+        {
+            try
+            {
+                var ev = await webApiExecuter.InvokeGet<Event>($"events/{eventId}");
+                if (ev == null) return NotFound();
 
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                    return PartialView("UpdatePassEv", ev);
+
+                return View(ev);
+            }
+            catch (WebApiExceptions ex)
+            {
+                HandleWebApiException(ex);
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdatePassEv(Event ev)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await webApiExecuter.InvokePut($"events/{ev.EventId}", ev);
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (WebApiExceptions ex)
+                {
+                    HandleWebApiException(ex);
+                }
+            }
+            return View(ev);
+        }
     }
 }

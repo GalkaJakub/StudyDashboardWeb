@@ -17,6 +17,8 @@ namespace Study_dashboard_API.Models
         public PriorityLevelEnum PriorityLevel { get; set; }
         public int? UserId { get; set; }
         public PassingType? PassingType { get; set; }
+        public bool IsPassed { get; set; } = false;
+        public double? Grade { get; set; }
         [JsonIgnore]
         public User? User { get; set; }
     }

@@ -21,7 +21,7 @@ namespace Study_dashboard_API.Filters.ExceptionFilters
             {
                if (db.Users.FirstOrDefault(x => x.UserId == userIdValue) == null)
                 {
-                    context.ModelState.AddModelError("UserId", "User doesn't exist");
+                    context.ModelState.AddModelError("UserId", "Użytkownik nie istnieje");
                     var problemDetails = new ValidationProblemDetails(context.ModelState)
                     {
                         Status = StatusCodes.Status404NotFound

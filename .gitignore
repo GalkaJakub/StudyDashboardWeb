@@ -10,3 +10,8 @@ bin/
 obj/
 out/
 
+
+# Ignoruj pliki konfiguracyjne środowiska developerskiego
+**/appsettings.Development.json
+**/appsettings.*.json
+

@@ -1,0 +1,34 @@
+﻿@model Event
+
+<form method="post" asp-action="UpdatePassEv">
+    <input type="hidden" asp-for="EventId" />
+    <input type="hidden" asp-for="Name" />
+    <input type="hidden" asp-for="Description" />
+    <input type="hidden" asp-for="PriorityLevel" />
+    <input type="hidden" asp-for="Date" />
+    <input type="hidden" asp-for="SubjectId" />
+    <input type="hidden" asp-for="Type" />
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <div class="mb-3">
+        <label asp-for="Grade" class="form-label">Ocena</label>
+        <select asp-for="Grade" class="form-select">
+            <option value="">Bez oceny</option>
+            @for (double i = 2.0; i <= 5.5; i += 0.5)
+            {
+                <option value="@i" selected="@(Model.Grade == i ? "selected" : null)">
+                    @i.ToString("0.0")
+                </option>
+            }
+        </select>
+    </div>
+
+    <div class="form-check mb-3">
+        <input type="checkbox" asp-for="IsPassed" class="form-check-input" />
+        <label asp-for="IsPassed" class="form-check-label">Zaliczone</label>
+    </div>
+
+    <div class="text-end">
+        <input type="submit" class="btn btn-primary" value="Zapisz" />
+    </div>
+</form>

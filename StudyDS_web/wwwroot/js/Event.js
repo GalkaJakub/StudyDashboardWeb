@@ -70,4 +70,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
         });
     });
+
+    const editPassButtons = document.querySelectorAll(".edit-pass-event-btn");
+    editPassButtons.forEach(button => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+            const eventId = this.dataset.id;
+
+            fetch(`/Events/UpdatePassEv?eventId=${eventId}`, {
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            })
+                .then(response => response.text())
+                .then(html => {
+                    const modalContent = document.getElementById("editPassEventModalContent");
+                    modalContent.innerHTML = html;
+
+                    const modal = new bootstrap.Modal(document.getElementById("editPassEventModal"));
+                    modal.show();
+                });
+        });
+    });
 });

@@ -130,5 +130,27 @@ namespace StudyDS_web.Controllers
             return View(subject);
         }
 
+        public async Task<IActionResult> PassSub(int subjectId)
+        {
+            try
+            {
+                var subject = await webApiExecuter.InvokeGet<Subject>($"subjects/{subjectId}");
+                if (subject != null)
+                {
+                    if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                        return PartialView("UpdatePassSub", subject);
+
+                    return View(subject);
+                }
+            }
+            catch (WebApiExceptions ex)
+            {
+                HandleWebApiException(ex);
+                return View();
+            }
+
+            return NotFound();
+        }
+
     }
 }

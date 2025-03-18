@@ -13,7 +13,7 @@ namespace Study_dashboard_API.Models.Validations
             {
                 if (user.Password.Length < 8)
                 {
-                    return new ValidationResult("Password has to be longer than 7 char.");
+                    return new ValidationResult("Hasło musi posiadać co najmniej 8 znaków.");
                 }
             }
 

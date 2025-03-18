@@ -33,7 +33,7 @@ namespace Study_dashboard_API.Filters.ActionFilters
                 var validateUser = db.Users.FirstOrDefault(x => x.Name.ToLower() == user.Name.ToLower());
                 if (validateUser != null)
                 {
-                    context.ModelState.AddModelError("User", "User already exist.");
+                    context.ModelState.AddModelError("User", "Uzytkownik juz istnieje.");
                     var problemDetails = new ValidationProblemDetails(context.ModelState)
                     {
                         Status = StatusCodes.Status400BadRequest
@@ -43,7 +43,7 @@ namespace Study_dashboard_API.Filters.ActionFilters
                 validateUser = db.Users.FirstOrDefault(x => x.Email ==  user.Email);
                 if (validateUser != null && validateUser.Email != null)
                 {
-                    context.ModelState.AddModelError("User", "User already exist.");
+                    context.ModelState.AddModelError("User", "Uzytkownik juz istnieje.");
                     var problemDetails = new ValidationProblemDetails(context.ModelState)
                     {
                         Status = StatusCodes.Status400BadRequest

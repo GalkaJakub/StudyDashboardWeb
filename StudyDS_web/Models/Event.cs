@@ -11,9 +11,10 @@ namespace StudyDS_web.Models
         public DateTime Date { get; set; } = DateTime.UtcNow.Date;
         public PriorityLevelEnum PriorityLevel { get; set; }
         public string? SubjectName { get; set; }
-        public bool IaActive { get; set; } = true;
         public EventType? Type { get; set; }
         public int? SubjectId { get; set; }
+        public bool IsPassed { get; set; }
+        public double? Grade { get; set; }
 
     }
 

@@ -32,7 +32,7 @@ namespace Study_dashboard_API.Filters.ActionFilters
             var validUser = db.Users.FirstOrDefault(x => x.Name.ToLower() == user.Name.ToLower());
             if (validUser != null && validUser.UserId != user.UserId)
             {
-                context.ModelState.AddModelError("User", "User already exist.");
+                context.ModelState.AddModelError("User", "Użytkownik już isteniej.");
                 var problemDetails = new ValidationProblemDetails(context.ModelState)
                 {
                     Status = StatusCodes.Status400BadRequest

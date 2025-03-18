@@ -57,6 +57,8 @@ namespace Study_dashboard_API.Controllers
             subjectToUpdate.Ects = subject.Ects;
             subjectToUpdate.Name = subject.Name;
             subjectToUpdate.PassingType = subject.PassingType;
+            subjectToUpdate.IsPassed = subject.IsPassed;
+            subjectToUpdate.Grade = subject.Grade;
             db.SaveChanges();
 
             return NoContent();

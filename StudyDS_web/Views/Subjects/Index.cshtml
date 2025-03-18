@@ -13,18 +13,55 @@
         {
             <div class="col">
                 <div class="card h-100 position-relative">
+
+                    <form asp-action="DeleteSub" asp-route-subjectId="@subject.SubjectId" method="post"
+                          class="position-absolute top-0 end-0 p-2">
+                        <button type="submit" class="btn btn-sm btn-danger" title="Usuń">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </form>
+
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">@subject.Name</h5>
+                        <h5 class="card-title mt-4">@subject.Name</h5>
                         <p class="card-text"><strong>Ilość ECTS:</strong> @subject.Ects</p>
                         <p class="card-text"><strong>Priorytet:</strong> @Html.DisplayFor(model => subject.PriorityLevel)</p>
                         @if (subject.PassingType != null)
                         {
                             <p class="card-text mb-3"><strong>Zaliczenie:</strong> @Html.DisplayFor(model => subject.PassingType)</p>
                         }
+
                         <div class="mt-auto d-flex justify-content-between">
                             <a href="#" class="btn btn-primary edit-subject-btn" data-id="@subject.SubjectId">Edytuj</a>
-                            <a class="btn btn-danger" asp-action="DeleteSub" asp-route-subjectId="@subject.SubjectId">Usuń</a>
+                            <a href="#" class="btn btn-success edit-pass-subject-btn" data-id="@subject.SubjectId">Zaliczenie</a>
                         </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        @{
+                            string message;
+                            string colorClass;
+                            if (!subject.IsPassed)
+                            {
+                                message = "Brak zaliczenia";
+                                colorClass = "text-secondary";
+                            }
+                            else if (subject.Grade.HasValue)
+                            {
+                                message = $"Zaliczono z oceną: {subject.Grade.Value.ToString("0.0")}";
+                                colorClass = "text-success";
+                                if (subject.Grade < 2.5)
+                                {
+                                    message = $"Brak zaliczenia z oceną: {subject.Grade.Value.ToString("0.0")}";
+                                    colorClass = "text-danger";
+                                }
+                            }
+                            else
+                            {
+                                message = "Zaliczono bez oceny";
+                                colorClass = "text-success";
+                            }
+
+                        }
+                        <small class="@colorClass fw-semibold">@message</small>
                     </div>
                 </div>
             </div>
@@ -60,4 +97,21 @@
         </div>
     </div>
 
+    <div class="modal fade" id="editPassSubjectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Dodaj zaliczenie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="editPassSubjectModalContent">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts
+    {
+    <script src="~/js/Subject.js" asp-append-version="true"></script>
+    }
 }

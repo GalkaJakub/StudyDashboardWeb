@@ -20,10 +20,12 @@ namespace Study_dashboard_API.Models
         public int? UserId { get; set; }
         public int? SubjectId { get; set; }
         public EventType? Type { get; set; }
-        public bool IaActive { get; set; } = true;
+        public bool IsPassed { get; set; } = false;
+        public double? Grade { get; set; }
         [JsonIgnore]
         public User? User { get; set; }
         public Subject? Subject { get; set; }
+
     }
 
     public enum PriorityLevelEnum

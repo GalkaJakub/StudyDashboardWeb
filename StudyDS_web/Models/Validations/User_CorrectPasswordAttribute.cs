@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace StudyDS_web.Models.Validations
 {
@@ -13,7 +12,7 @@ namespace StudyDS_web.Models.Validations
             {
                 if (user.Password.Length < 8)
                 {
-                    return new ValidationResult("Password has to be longer than 7 char.");
+                    return new ValidationResult("Hasło musi posiadać co najmniej 8 znaków.");
                 }
             }
 
