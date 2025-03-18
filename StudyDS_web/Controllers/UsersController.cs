@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudyDS_web.Models;
 using StudyDS_web.Data;
+using StudyDS_web.Models.ViewModels;
 
 namespace StudyDS_web.Controllers
 {
@@ -66,5 +67,13 @@ namespace StudyDS_web.Controllers
                 return View(nameof(Index), await webApiExecuter.InvokeGet<List<User>>("users"));
             }
         }
+
+        public IActionResult GetStats()
+        {
+            //ilość ects, srednia ocen, ile przedmiotów, ile eventów
+            var model = new StatsViewModel();
+            return View(model);
+        }
+
     }
 }

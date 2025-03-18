@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudyDS_web.Data;
 using StudyDS_web.Models;
+using StudyDS_web.Models.ViewModels;
 
 namespace StudyDS_web.Controllers
 {
@@ -68,6 +69,47 @@ namespace StudyDS_web.Controllers
                 HttpContext.Session.Remove("access_token");
             }
             return RedirectToAction("Index", "Home");
+        }
+
+        public async Task<IActionResult> ChangePassword()
+        {
+            try
+            {
+                var user = await webApiExecuter.InvokeGet<User>($"users/current");
+                if (user != null)
+                {
+                    var model = new ChangePasswordViewModel
+                    {
+                        User = user,
+                    };
+                    return View(model);
+                }
+
+            }
+            catch (WebApiExceptions ex)
+            {
+                HandleWebApiException(ex);
+                return View();
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    await webApiExecuter.InvokePutPassword("users/updatePassword", model);
+                    return RedirectToAction("Index", "Subjects");
+                }
+                catch (WebApiExceptions ex)
+                {
+                    HandleWebApiException(ex);
+                }
+            }
+            return View(model);
         }
     }
 }

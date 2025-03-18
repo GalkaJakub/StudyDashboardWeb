@@ -1,6 +1,8 @@
 ﻿using Azure;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Runtime.CompilerServices;
 
 namespace StudyDS_web.Data
 {
@@ -69,6 +71,14 @@ namespace StudyDS_web.Data
             var response = await httpClient.PostAsJsonAsync(relativeUrl, obj);
             await HandleError(response);
             return await response.Content.ReadFromJsonAsync<T>();
+        }
+
+        public async Task InvokePutPassword<T>(string relativeUrl, T obj)
+        {
+            var httpClient = httpClientFactory.CreateClient(apiName);
+            AddJwtToHeader(httpClient);
+            var response = await httpClient.PutAsJsonAsync(relativeUrl, obj);
+            await HandleError(response);
         }
 
         public async Task InvokeLogin(string? login, string? password)

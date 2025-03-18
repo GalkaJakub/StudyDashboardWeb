@@ -82,5 +82,19 @@ namespace Study_dashboard_API.Controllers
             db.SaveChanges();
             return Ok(user);
         }
+
+        [HttpPut("updatePassword")]
+        [JwtTokenAuthFilter]
+        [TypeFilter(typeof(User_ValidateUpdatePasswordFilterAttribute))]
+        public IActionResult UpdatePassword([FromBody] ChangePasswordDto model)
+        {
+            var user = HttpContext.Items["user"] as User;
+
+            var passwordHash = passwordHasher.HashPassword(model.NewPassword);
+            user.Password = passwordHash;
+            db.SaveChanges();
+
+            return NoContent();
+        }
     }
 }
