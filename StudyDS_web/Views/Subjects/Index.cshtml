@@ -4,14 +4,28 @@
 }
 @model SubjectIndexViewModel
 
-<h3>Przedmioty</h3>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="mb-0">Przedmioty</h3>
+    <div class="form-group w-auto">
+        <label for="sortSelect" class="form-label fw-semibold mb-0 me-2">Sortuj według:</label>
+        <select id="sortSelect" class="form-select">
+            <option value="" selected hidden>Wybierz</option>
+            <option value="priority">Priorytet</option>
+            <option value="passed">Zaliczenie</option>
+            <option value="grade">Ocena</option>
+        </select>
+    </div>
+</div>
 
 @if(Model != null)
 {
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div id="subjectsContainer" class="row row-cols-1 row-cols-md-3 g-4">
         @foreach (var subject in Model.Subjects)
         {
-            <div class="col">
+            <div class="col subject-card" 
+                 data-priority="@((int)subject.PriorityLevel)"
+                 data-passed="@(subject.IsPassed ? 1 : 0)"
+                 data-grade="@subject.Grade.GetValueOrDefault(0)">
                 <div class="card h-100 position-relative">
 
                     <form asp-action="DeleteSub" asp-route-subjectId="@subject.SubjectId" method="post"

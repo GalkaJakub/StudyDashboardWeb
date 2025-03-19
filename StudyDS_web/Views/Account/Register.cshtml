@@ -17,17 +17,14 @@
                         <div class="mb-3">
                             <label asp-for="Name" class="form-label">Login</label>
                             <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="Email" class="form-label">Adres Email</label>
-                            <input asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
                             <label asp-for="Password" class="form-label">Hasło</label>
                             <input asp-for="Password" type="password" class="form-control" />
-                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Adres Email</label>
+                            <input asp-for="Email" class="form-control" placeholder="Opcjonalne" />
                         </div>
                         <div class="d-grid">
                             <button type="submit" class="btn btn-login-custom">Zarejestruj się</button>

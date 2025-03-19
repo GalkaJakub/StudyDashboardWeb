@@ -92,4 +92,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
         });
     });
+
+    const container = document.getElementById("eventsContainer");
+    const cards = Array.from(container.querySelectorAll(".event-card"));
+    const sortSelect = document.getElementById("sortSelect");
+
+    sortSelect.addEventListener("change", function () {
+        const sortBy = this.value;
+
+        const sorted = cards.slice().sort((a, b) => {
+            const valA = a.dataset[sortBy];
+            const valB = b.dataset[sortBy];
+
+            if (sortBy === "date") {
+                return new Date(valA) - new Date(valB);
+            }
+            if (sortBy === "priority" || sortBy === "grade" || sortBy === "passed") {
+                return Number(valB) - Number(valA);
+            }
+
+            return 0;
+        });
+
+        container.innerHTML = "";
+        sorted.forEach(card => container.appendChild(card));
+    });
+
 });

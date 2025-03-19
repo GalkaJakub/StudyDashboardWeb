@@ -3,14 +3,32 @@
     ViewData["Title"] = "Wydarzenia";
 }
 @model EventsIndexViewModel
-<h3>Wydarzenia</h3>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="mb-0">Wydarzenia</h3>
+    <div class="form-group w-auto">
+        <label for="sortSelect" class="form-label fw-semibold mb-0 me-2">Sortuj według:</label>
+        <select id="sortSelect" class="form-select">
+            <option value="" selected hidden>Wybierz</option>
+            <option value="date">Data</option>
+            <option value="priority">Priorytet</option>
+            <option value="passed">Zaliczenie</option>
+            <option value="grade">Ocena</option>
+        </select>
+    </div>
+</div>
+
 
 @if (Model != null)
 {
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div id="eventsContainer" class="row row-cols-1 row-cols-md-3 g-4">
         @foreach (var ev in Model.Events)
         {
-            <div class="col">
+            <div class="col event-card"
+                 data-date="@ev.Date.ToString("yyyy-MM-dd")"
+                 data-priority="@((int)ev.PriorityLevel)"
+                 data-passed="@(ev.IsPassed ? 1 : 0)"
+                 data-grade="@ev.Grade.GetValueOrDefault(0)">
+
                 <div class="card h-100 position-relative">
                     <form asp-action="DeleteEv" asp-route-eventId="@ev.EventId" class="position-absolute top-0 end-0 p-2">
                         <button type="submit" class="btn btn-sm btn-danger" title="Usuń">
@@ -148,3 +166,4 @@
     </div>
 
 }
+

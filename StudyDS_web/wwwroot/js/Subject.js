@@ -64,4 +64,26 @@
                 });
         });
     });
+
+    const container = document.getElementById("subjectsContainer");
+    const cards = Array.from(container.querySelectorAll(".subject-card"));
+    const sortSelect = document.getElementById("sortSelect");
+
+    sortSelect.addEventListener("change", function () {
+        const sortBy = this.value;
+
+        const sorted = cards.slice().sort((a, b) => {
+            const valA = a.dataset[sortBy];
+            const valB = b.dataset[sortBy];
+
+            if (sortBy === "priority" || sortBy === "grade" || sortBy === "passed") {
+                return Number(valB) - Number(valA);
+            }
+
+            return 0;
+        });
+
+        container.innerHTML = "";
+        sorted.forEach(card => container.appendChild(card));
+    });
 });
