@@ -1,4 +1,5 @@
 ﻿@using StudyDS_web.Models.ViewModels
+@using System.Globalization
 @{
     ViewData["Title"] = "Wydarzenia";
 }
@@ -27,7 +28,7 @@
                  data-date="@ev.Date.ToString("yyyy-MM-dd")"
                  data-priority="@((int)ev.PriorityLevel)"
                  data-passed="@(ev.IsPassed ? 1 : 0)"
-                 data-grade="@ev.Grade.GetValueOrDefault(0)">
+                 data-grade="@(ev.Grade.HasValue ? ev.Grade.Value.ToString(CultureInfo.InvariantCulture) : "0")">
 
                 <div class="card h-100 position-relative">
                     <form asp-action="DeleteEv" asp-route-eventId="@ev.EventId" class="position-absolute top-0 end-0 p-2">
@@ -167,3 +168,7 @@
 
 }
 
+    @section Scripts
+    {
+        <script src="~/js/Event.js" asp-append-version="true"></script>    
+    }

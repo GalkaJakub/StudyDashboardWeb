@@ -71,14 +71,14 @@
     });
 
     // Sorting subject cards based on dropdown selection
-    const container = document.getElementById("subjectsContainer");
-    const cards = Array.from(container.querySelectorAll(".subject-card"));
-    const sortSelect = document.getElementById("sortSelect");
+    const SubjectContainer = document.getElementById("subjectsContainer");
+    const SubjectCards = Array.from(SubjectContainer.querySelectorAll(".subject-card"));
+    const SubjectSortSelect = document.getElementById("SubjectSortSelect");
 
-    sortSelect.addEventListener("change", function () {
+    SubjectSortSelect.addEventListener("change", function () {
         const sortBy = this.value;
 
-        const sorted = cards.slice().sort((a, b) => {
+        const sorted = SubjectCards.slice().sort((a, b) => {
             const valA = a.dataset[sortBy];
             const valB = b.dataset[sortBy];
 
@@ -89,7 +89,7 @@
             return 0;
         });
 
-        container.innerHTML = "";
-        sorted.forEach(card => container.appendChild(card));
+        SubjectContainer.innerHTML = "";
+        sorted.forEach(card => SubjectContainer.appendChild(card));
     });
 });

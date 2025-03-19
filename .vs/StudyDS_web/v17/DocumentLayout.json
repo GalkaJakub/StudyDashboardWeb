@@ -3,16 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\jakub\\Documents\\StudyDS_web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\events\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\events\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\subjects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\subjects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\wwwroot\\js\\subject.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\wwwroot\\js\\subject.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\wwwroot\\js\\event.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\wwwroot\\js\\event.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Migrations\\20250319151245_InitMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Study_dashboard_API\\Migrations\\20250319151245_InitMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\migrations\\20250319150055_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\migrations\\20250319150055_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|c:\\users\\jakub\\documents\\studyds_web\\study_dashboard_api\\study_dashboard_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{6A693126-54A1-4199-A307-3B838575DAF5}|Study_dashboard_API\\Study_dashboard_API.csproj|solutionrelative:study_dashboard_api\\study_dashboard_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\models\\viewmodels\\subjectindexviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -95,10 +139,6 @@
       "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|c:\\users\\jakub\\documents\\studyds_web\\studyds_web\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8D29BDFB-4A32-48F7-9B33-7CC0F7EEAF9F}|StudyDS_web\\StudyDS_web.csproj|solutionrelative:studyds_web\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -115,45 +155,161 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Program.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Program.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Program.cs",
-              "RelativeToolTip": "StudyDS_web\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACgAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:34:01.008Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Events\\Index.cshtml",
+              "RelativeDocumentMoniker": "StudyDS_web\\Views\\Events\\Index.cshtml",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Events\\Index.cshtml",
+              "RelativeToolTip": "StudyDS_web\\Views\\Events\\Index.cshtml",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAAC0AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-19T15:59:10.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "StudyDS_web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "StudyDS_web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAADgAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-19T15:50:12.11Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Subjects\\Index.cshtml",
+              "RelativeDocumentMoniker": "StudyDS_web\\Views\\Subjects\\Index.cshtml",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Subjects\\Index.cshtml",
+              "RelativeToolTip": "StudyDS_web\\Views\\Subjects\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-19T15:40:27.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "login.cshtml",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Account\\login.cshtml",
+              "RelativeDocumentMoniker": "StudyDS_web\\Views\\Account\\login.cshtml",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Views\\Account\\login.cshtml",
+              "RelativeToolTip": "StudyDS_web\\Views\\Account\\login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-19T15:15:52.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20250319151245_InitMigration.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Migrations\\20250319151245_InitMigration.cs",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\Migrations\\20250319151245_InitMigration.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Migrations\\20250319151245_InitMigration.cs",
+              "RelativeToolTip": "Study_dashboard_API\\Migrations\\20250319151245_InitMigration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T15:12:45.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Study_dashboard_API\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAwwCQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T15:11:56.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20250319150055_Init.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Migrations\\20250319150055_Init.cs",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\Migrations\\20250319150055_Init.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Migrations\\20250319150055_Init.cs",
+              "RelativeToolTip": "Study_dashboard_API\\Migrations\\20250319150055_Init.cs",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAgwIMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T15:06:26.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\appsettings.Development.json",
+              "RelativeToolTip": "Study_dashboard_API\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-19T15:00:16.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\appsettings.json",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\appsettings.json",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\appsettings.json",
+              "RelativeToolTip": "Study_dashboard_API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-19T14:53:20.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Program.cs",
+              "RelativeDocumentMoniker": "StudyDS_web\\Program.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Program.cs",
+              "RelativeToolTip": "StudyDS_web\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T12:34:01.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Subject.js",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\wwwroot\\js\\Subject.js",
               "RelativeDocumentMoniker": "StudyDS_web\\wwwroot\\js\\Subject.js",
               "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\wwwroot\\js\\Subject.js",
               "RelativeToolTip": "StudyDS_web\\wwwroot\\js\\Subject.js",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowEgAAAA4AAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAWwE0AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-03-19T12:32:39.064Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Event.js",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\wwwroot\\js\\Event.js",
               "RelativeDocumentMoniker": "StudyDS_web\\wwwroot\\js\\Event.js",
               "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\wwwroot\\js\\Event.js",
               "RelativeToolTip": "StudyDS_web\\wwwroot\\js\\Event.js",
-              "ViewState": "AQIAADIAAAAAAAAAAAAIwGYAAAAzAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGYAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-03-19T12:31:05.207Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 14,
               "Title": "SubjectIndexViewModel.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\ViewModels\\SubjectIndexViewModel.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Models\\ViewModels\\SubjectIndexViewModel.cs",
@@ -161,12 +317,11 @@
               "RelativeToolTip": "StudyDS_web\\Models\\ViewModels\\SubjectIndexViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:30:58.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:30:58.259Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 15,
               "Title": "SubjectFormViewModel.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\ViewModels\\SubjectFormViewModel.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Models\\ViewModels\\SubjectFormViewModel.cs",
@@ -174,12 +329,36 @@
               "RelativeToolTip": "StudyDS_web\\Models\\ViewModels\\SubjectFormViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:30:57.174Z",
+              "WhenOpened": "2025-03-19T12:30:57.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "StudyDS_web\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "StudyDS_web\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwB8AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T12:18:15.475Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
+              "Title": "Study_dashboard_API.http",
+              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Study_dashboard_API.http",
+              "RelativeDocumentMoniker": "Study_dashboard_API\\Study_dashboard_API.http",
+              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\Study_dashboard_API\\Study_dashboard_API.http",
+              "RelativeToolTip": "Study_dashboard_API\\Study_dashboard_API.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-03-19T14:53:27.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "StatsViewModel.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\ViewModels\\StatsViewModel.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Models\\ViewModels\\StatsViewModel.cs",
@@ -187,12 +366,11 @@
               "RelativeToolTip": "StudyDS_web\\Models\\ViewModels\\StatsViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:30:54.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:30:54.244Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 17,
               "Title": "EventsIndexViewModel.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\ViewModels\\EventsIndexViewModel.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Models\\ViewModels\\EventsIndexViewModel.cs",
@@ -200,12 +378,11 @@
               "RelativeToolTip": "StudyDS_web\\Models\\ViewModels\\EventsIndexViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:30:53.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:30:53.665Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 18,
               "Title": "EventFormViewModel.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\ViewModels\\EventFormViewModel.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Models\\ViewModels\\EventFormViewModel.cs",
@@ -213,12 +390,11 @@
               "RelativeToolTip": "StudyDS_web\\Models\\ViewModels\\EventFormViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:30:53.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:30:53.048Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 19,
               "Title": "ChangePasswordViewModel.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\ViewModels\\ChangePasswordViewModel.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Models\\ViewModels\\ChangePasswordViewModel.cs",
@@ -226,12 +402,11 @@
               "RelativeToolTip": "StudyDS_web\\Models\\ViewModels\\ChangePasswordViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:30:45.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:30:45.859Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 20,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Models\\ErrorViewModel.cs",
@@ -239,12 +414,11 @@
               "RelativeToolTip": "StudyDS_web\\Models\\ErrorViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:30:40.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:30:40.584Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 21,
               "Title": "Event.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\Event.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Models\\Event.cs",
@@ -252,12 +426,11 @@
               "RelativeToolTip": "StudyDS_web\\Models\\Event.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:30:06.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:30:06.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 22,
               "Title": "Subject.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\Subject.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Models\\Subject.cs",
@@ -265,12 +438,11 @@
               "RelativeToolTip": "StudyDS_web\\Models\\Subject.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:29:02.301Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:29:02.301Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 23,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Models\\User.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Models\\User.cs",
@@ -278,12 +450,11 @@
               "RelativeToolTip": "StudyDS_web\\Models\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:28:55.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:28:55.666Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 24,
               "Title": "WebApiExecuter.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Data\\WebApiExecuter.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Data\\WebApiExecuter.cs",
@@ -291,12 +462,11 @@
               "RelativeToolTip": "StudyDS_web\\Data\\WebApiExecuter.cs",
               "ViewState": "AQIAACwAAAAAAAAAAAAwwHUAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:27:06.033Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:27:06.033Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 25,
               "Title": "WebApiExceptions.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Data\\WebApiExceptions.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Data\\WebApiExceptions.cs",
@@ -304,12 +474,11 @@
               "RelativeToolTip": "StudyDS_web\\Data\\WebApiExceptions.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:26:35.589Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:26:35.589Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 26,
               "Title": "JwtToken.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Data\\JwtToken.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Data\\JwtToken.cs",
@@ -317,12 +486,11 @@
               "RelativeToolTip": "StudyDS_web\\Data\\JwtToken.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:26:29.115Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:26:29.115Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 27,
               "Title": "ErrorResponse.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Data\\ErrorResponse.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Data\\ErrorResponse.cs",
@@ -330,12 +498,11 @@
               "RelativeToolTip": "StudyDS_web\\Data\\ErrorResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:26:24.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:26:24.329Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 28,
               "Title": "AuthMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Data\\AuthMiddleware.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Data\\AuthMiddleware.cs",
@@ -343,12 +510,11 @@
               "RelativeToolTip": "StudyDS_web\\Data\\AuthMiddleware.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:26:19.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:26:19.364Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 29,
               "Title": "AppCredencial.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Data\\AppCredencial.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Data\\AppCredencial.cs",
@@ -356,12 +522,11 @@
               "RelativeToolTip": "StudyDS_web\\Data\\AppCredencial.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:26:18.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:26:18.541Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 30,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Controllers\\UsersController.cs",
@@ -369,12 +534,11 @@
               "RelativeToolTip": "StudyDS_web\\Controllers\\UsersController.cs",
               "ViewState": "AQIAADIAAAAAAAAAAAAIwE0AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:25:09.838Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:25:09.838Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 31,
               "Title": "SubjectsController.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\SubjectsController.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Controllers\\SubjectsController.cs",
@@ -382,12 +546,11 @@
               "RelativeToolTip": "StudyDS_web\\Controllers\\SubjectsController.cs",
               "ViewState": "AQIAAGEAAAAAAAAAAAAcwIoAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:23:29.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:23:29.044Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 32,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Controllers\\HomeController.cs",
@@ -395,12 +558,11 @@
               "RelativeToolTip": "StudyDS_web\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:23:24.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:23:24.719Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 33,
               "Title": "EventsController.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\EventsController.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Controllers\\EventsController.cs",
@@ -408,12 +570,11 @@
               "RelativeToolTip": "StudyDS_web\\Controllers\\EventsController.cs",
               "ViewState": "AQIAAHAAAAAAAAAAAAAcwKIAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:20:19.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:20:19.896Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 34,
               "Title": "BaseController.cs",
               "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\BaseController.cs",
               "RelativeDocumentMoniker": "StudyDS_web\\Controllers\\BaseController.cs",
@@ -421,21 +582,7 @@
               "RelativeToolTip": "StudyDS_web\\Controllers\\BaseController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:20:14.695Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "StudyDS_web\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\jakub\\Documents\\StudyDS_web\\StudyDS_web\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "StudyDS_web\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAwwBoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:18:15.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:20:14.695Z"
             }
           ]
         }

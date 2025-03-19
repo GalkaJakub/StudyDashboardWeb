@@ -30,6 +30,12 @@ namespace Study_dashboard_API.Data
                 .HasForeignKey(e => e.SubjectId)
                 .OnDelete(DeleteBehavior.NoAction);
 
+            modelBuilder.Entity<Subject>()
+                .HasOne(e => e.User)
+                .WithMany()
+                .HasForeignKey(e => e.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<User>().HasData(
                 new User { UserId = 1, Name = "Kuba1", Password = "kuba1111" },
                 new User { UserId = 2, Name = "Kuba2", Password = "kuba2222" },

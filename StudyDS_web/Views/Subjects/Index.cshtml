@@ -1,4 +1,5 @@
 ﻿@using StudyDS_web.Models.ViewModels
+@using System.Globalization
 @{
     ViewData["Title"] = "Przedmioty";
 }
@@ -8,7 +9,7 @@
     <h3 class="mb-0">Przedmioty</h3>
     <div class="form-group w-auto">
         <label for="sortSelect" class="form-label fw-semibold mb-0 me-2">Sortuj według:</label>
-        <select id="sortSelect" class="form-select">
+        <select id="SubjectSortSelect" class="form-select">
             <option value="" selected hidden>Wybierz</option>
             <option value="priority">Priorytet</option>
             <option value="passed">Zaliczenie</option>
@@ -25,7 +26,7 @@
             <div class="col subject-card" 
                  data-priority="@((int)subject.PriorityLevel)"
                  data-passed="@(subject.IsPassed ? 1 : 0)"
-                 data-grade="@subject.Grade.GetValueOrDefault(0)">
+                 data-grade="@(subject.Grade.HasValue ? subject.Grade.Value.ToString(CultureInfo.InvariantCulture) : "0")">
                 <div class="card h-100 position-relative">
 
                     <form asp-action="DeleteSub" asp-route-subjectId="@subject.SubjectId" method="post"
@@ -129,3 +130,4 @@
     <script src="~/js/Subject.js" asp-append-version="true"></script>
     }
 }
+

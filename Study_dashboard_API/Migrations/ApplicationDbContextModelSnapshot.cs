@@ -298,7 +298,8 @@ namespace Study_dashboard_API.Migrations
                 {
                     b.HasOne("Study_dashboard_API.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("User");
                 });
