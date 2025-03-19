@@ -11,17 +11,17 @@ Test account:
 **Password:** test1234
 
 Technologies Used:  
-Backend:
+Backend:  
 - ASP.NET Core Web API (C#)
 - Entity Framework Core
 - JWT Authentication  
-Frontend:
+Frontend:  
 - ASP.NET Core MVC + Razor Pages
 - Bootstrap 5  
-Database:
+Database:  
 - Microsoft SQL Server
 - Azure SQL Database  
-DevOps & Deployment:
+DevOps & Deployment:  
 - Azure App Service  
 
 Author
