@@ -1,0 +1,64 @@
+﻿@using StudyDS_web.Models.ViewModels
+@model StatsViewModel
+
+@{
+    ViewData["Title"] = "Statystyki";
+}
+
+<div class="container mt-4">
+    <h3 class="mb-4 text-center">Statystyki użytkownika</h3>
+
+    <div class="table-responsive shadow-sm rounded">
+        <table class="table table-hover table-striped align-middle border rounded">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">Kategoria</th>
+                    <th scope="col">Wartość</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Łączna liczba ECTS</td>
+                    <td class="fw-semibold text-primary">@Model.TotalEcts</td>
+                </tr>
+                <tr>
+                    <td>Uzyskane ECTS</td>
+                    <td class="fw-semibold text-success">@Model.PassedEcts</td>
+                </tr>
+                <tr>
+                    <td>Liczba przedmiotów</td>
+                    <td>@Model.SubjectCount</td>
+                </tr>
+                <tr>
+                    <td>Zaliczone przedmioty</td>
+                    <td class="text-success fw-semibold">@Model.SubjectsPassed</td>
+                </tr>
+                <tr>
+                    <td>Liczba wydarzeń</td>
+                    <td>@Model.EventCount</td>
+                </tr>
+                <tr>
+                    <td>Zaliczone wydarzenia</td>
+                    <td class="text-success fw-semibold">@Model.EventsPassed</td>
+                </tr>
+                <tr>
+                    <td>Średnia ocen z przedmiotów</td>
+                    <td>
+                        @Html.Raw(Model.AverageSubjectsGrade > 0
+                                 ? $"<span class='fw-semibold text-dark'>{Model.AverageSubjectsGrade:0.00}</span>"
+                                 : "<span class='text-muted'>Brak danych</span>")
+                    </td>
+                </tr>
+                <tr>
+                    <td>Średnia ocen z wydarzeń</td>
+                    <td>
+                        @Html.Raw(Model.AverageEventsGrade > 0
+                                 ? $"<span class='fw-semibold text-dark'>{Model.AverageEventsGrade:0.00}</span>"
+                                 : "<span class='text-muted'>Brak danych</span>")
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

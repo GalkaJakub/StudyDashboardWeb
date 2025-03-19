@@ -30,9 +30,9 @@
                     const priorityText = modalContent.querySelector("#priorityValue");
 
                     if (slider && priorityText) {
-                        updatePriorityValue(slider.value);
+                        priorityText.innerText = priorityMap[slider.value] ?? slider.value;
                         slider.addEventListener("input", function () {
-                            updatePriorityValue(this.value);
+                            priorityText.innerText = priorityMap[this.value] ?? this.value;
                         });
                     }
 

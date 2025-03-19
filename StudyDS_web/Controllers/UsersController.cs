@@ -68,11 +68,45 @@ namespace StudyDS_web.Controllers
             }
         }
 
-        public IActionResult GetStats()
+        public async Task<IActionResult> GetStats()
         {
-            //ilość ects, srednia ocen, ile przedmiotów, ile eventów
-            var model = new StatsViewModel();
-            return View(model);
+            try
+            {
+                var events = await webApiExecuter.InvokeGet<List<Event>>("events");
+                var subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects");
+
+                var totalEcts = subjects.Where(s => s.Ects.HasValue).Sum(s => s.Ects.Value);
+                var passedEcts = subjects.Where(s => s.IsPassed && s.Ects.HasValue).Sum(s => s.Ects.Value);
+
+                var subjectCount = subjects.Count;
+                var subjectsPassed = subjects.Count(s => s.IsPassed);
+
+                var eventCount = events.Count;
+                var eventsPassed = events.Count(e => e.IsPassed);
+
+                var avgSubjectGrade = subjects.Where(s => s.Grade.HasValue).DefaultIfEmpty().Average(s => s?.Grade ?? 0);
+                var avgEventGrade = events.Where(e => e.Grade.HasValue).DefaultIfEmpty().Average(e => e?.Grade ?? 0);
+
+
+                var model = new StatsViewModel
+                {
+                    TotalEcts = totalEcts,
+                    PassedEcts = passedEcts,
+                    SubjectCount = subjectCount,
+                    SubjectsPassed = subjectsPassed,
+                    EventCount = eventCount,
+                    EventsPassed = eventsPassed,
+                    AverageSubjectsGrade = avgSubjectGrade,
+                    AverageEventsGrade = avgEventGrade,
+                };
+
+                return View(model);
+            }
+            catch (WebApiExceptions ex)
+            {
+                HandleWebApiException(ex);
+                return View();
+            }
         }
 
     }

@@ -11,7 +11,7 @@
     </div>
     <div class="mb-3">
         <label asp-for="Subject.PriorityLevel" class="form-label">Priorytet</label>
-        <input type="range" asp-for="Subject.PriorityLevel" class="form-range" min="0" max="2" step="1" id="priorityRange" />
+        <input type="range" asp-for="Subject.PriorityLevel" class="form-range" min="0" max="2" step="1" id="priorityRange" value="@( (int)Model.Subject.PriorityLevel )" />
         <span id="priorityValue" class="fw-bold"></span>
     </div>
     <div class="mb-3">
