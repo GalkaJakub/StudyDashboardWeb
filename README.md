@@ -16,14 +16,17 @@ Backend
 - ASP.NET Core Web API (C#)
 - Entity Framework Core
 - JWT Authentication
+
 Frontend
 
 - ASP.NET Core MVC (Razor Pages)
 - Bootstrap 5
+
 Database
 
 - Microsoft SQL Server
 - Azure SQL Database
+
 DevOps & Deployment
 
 - Azure App Service
