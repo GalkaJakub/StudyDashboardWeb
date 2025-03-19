@@ -5,7 +5,7 @@ With database integration, users can create and organize academic events and sub
 
 # Demo
 
-App: [https://studyds.azurewebsites.net](https://studyds.azurewebsites.net)
+App: [https://studyds.azurewebsites.net](https://studyds.azurewebsites.net)  
 Test account:  
 **Login:** testuser  
 **Password:** test1234
