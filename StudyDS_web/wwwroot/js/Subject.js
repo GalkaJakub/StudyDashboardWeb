@@ -1,14 +1,18 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
+    // Priority labels for display
     const priorityMap = {
         "0": "Niski",
         "1": "Średni",
         "2": "Wysoki"
     };
 
+    // Update text next to the slider
     function updatePriorityValue(val) {
         document.getElementById("priorityValue").innerText = priorityMap[val] ?? val;
     }
 
+
+    // Open the "Edit Subject" modal
     const editButtons = document.querySelectorAll(".edit-subject-btn");
 
     editButtons.forEach(button => {
@@ -42,6 +46,7 @@
         });
     });
 
+    // Open the "Mark as passed" modal for subject
     const editPassButtons = document.querySelectorAll(".edit-pass-subject-btn");
 
     editPassButtons.forEach(button => {
@@ -65,6 +70,7 @@
         });
     });
 
+    // Sorting subject cards based on dropdown selection
     const container = document.getElementById("subjectsContainer");
     const cards = Array.from(container.querySelectorAll(".subject-card"));
     const sortSelect = document.getElementById("sortSelect");

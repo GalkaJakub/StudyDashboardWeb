@@ -1,5 +1,6 @@
 ﻿namespace Study_dashboard_API.Models
 {
+    // Data Transfer Object used to send event data to the client
     public class EventDto
     {
         public int EventId { get; set; }

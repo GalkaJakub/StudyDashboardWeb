@@ -21,12 +21,17 @@ namespace Study_dashboard_API.Controllers
             this.passwordHasher = passwordHasher;
         }
 
+        // GET: api/users
+        // Returns all users (only accessible with valid JWT)
         [HttpGet]
         [JwtTokenAuthFilter]
         public IActionResult getUsers()
         {
             return Ok(db.Users.ToList());
         }
+
+        // GET: api/users/{id}
+        // Returns a user by ID (authorization and validation applied)
         [HttpGet("{id}")]
         [JwtTokenAuthFilter]
         [TypeFilter(typeof(User_ValidateUserIdFilterAttribute))]
@@ -35,6 +40,8 @@ namespace Study_dashboard_API.Controllers
             return Ok(HttpContext.Items["user"]);
         }
 
+        // GET: api/users/current
+        // Returns currently authenticated user (based on JWT)
         [HttpGet("current")]
         [JwtTokenAuthFilter]
         public IActionResult getUser()
@@ -47,6 +54,9 @@ namespace Study_dashboard_API.Controllers
             }
             return Ok(user);
         }
+
+        // PUT: api/users/{id}
+        // Updates user data (only if valid and authorized)
         [HttpPut("{id}")]
         [JwtTokenAuthFilter]
         [TypeFilter(typeof(User_ValidateUserIdFilterAttribute))]
@@ -62,6 +72,9 @@ namespace Study_dashboard_API.Controllers
             db.SaveChanges();
             return NoContent();
         }
+
+        // POST: api/users
+        // Registers a new user (with password hashing)
         [HttpPost]
         [TypeFilter(typeof(User_ValidateAddUserFilterAttribute))]
         public IActionResult createUser([FromBody]User user)
@@ -72,6 +85,9 @@ namespace Study_dashboard_API.Controllers
             db.SaveChanges();
             return CreatedAtAction(nameof(getUserById), new { id = user.UserId }, user);
         }
+
+        // DELETE: api/users/{id}
+        // Deletes a user (after validation and authorization)
         [HttpDelete("{id}")]
         [JwtTokenAuthFilter]
         [TypeFilter(typeof(User_ValidateUserIdFilterAttribute))]
@@ -83,6 +99,8 @@ namespace Study_dashboard_API.Controllers
             return Ok(user);
         }
 
+        // PUT: api/users/updatePassword
+        // Allows authenticated users to change their password
         [HttpPut("updatePassword")]
         [JwtTokenAuthFilter]
         [TypeFilter(typeof(User_ValidateUpdatePasswordFilterAttribute))]

@@ -2,6 +2,7 @@
 
 namespace StudyDS_web.Data
 {
+    // Custom exception used to handle errors returned from the Web API
     public class WebApiExceptions: Exception
     {
         public ErrorResponse? ErrorResponse { get;}

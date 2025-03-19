@@ -8,8 +8,10 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Study_dashboard_API.Authority
 {
+    // Handles authentication logic and JWT token creation/validation
     public static class Authenticator
     {
+        // Verifies if the application credentials (clientId and secret) are valid
         public static bool Authenticate(string clientId, string secret)
         {
             var app = AppRepository.GetApplication(clientId);
@@ -20,20 +22,14 @@ namespace Study_dashboard_API.Authority
             return (app.ClientId == clientId && app.Secret == secret);
         }
 
-        // Tworzymy token JSON JWT (Json web token)
-        // Składa sie on z 3 części:
-        // algorytm
-        // Payload (ladunek) (claims)
-        // Signature key (podpis)
-
-        //Nuget packet: System.IdentityModel.Tokens.Jwt
+        // Creates a JWT token for the authenticated user with claims
         public static string CreateToken(string clientId, string userId, DateTime expireAt, string strSecretKey)
         {
             var app = AppRepository.GetApplication(clientId);
 
             var claims = new List<Claim>
             {
-                new Claim("AppName", app.ApplicationName??string.Empty), //jeśli null = empty
+                new Claim("AppName", app.ApplicationName??string.Empty),
                 new Claim("UserId", userId),
                 new Claim("Read", (app?.Scopes??string.Empty).Contains("read")?"true": "false"),
                 new Claim("Write", (app?.Scopes??string.Empty).Contains("write")?"true": "false"),
@@ -54,6 +50,7 @@ namespace Study_dashboard_API.Authority
             return new JwtSecurityTokenHandler().WriteToken(jwt);
         }
 
+        // Validates and decodes a JWT token using the provided secret key
         public static JwtSecurityToken? VerifyToken(string token, string strSecretKey)
         {
             if (string.IsNullOrEmpty(token)) return null;

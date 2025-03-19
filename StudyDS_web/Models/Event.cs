@@ -2,6 +2,7 @@
 
 namespace StudyDS_web.Models
 {
+    // Represents an academic event (e.g. test, project, exam)
     public class Event
     {
         [Required]
@@ -18,6 +19,7 @@ namespace StudyDS_web.Models
 
     }
 
+    // Priority level for events or subjects
     public enum PriorityLevelEnum
     {
         [Display(Name = "niski")]
@@ -28,6 +30,7 @@ namespace StudyDS_web.Models
         High,
     }
 
+    // Type of academic event
     public enum EventType
     {
         [Display(Name = "Egzamin")]

@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 
 namespace Study_dashboard_API.Security
 {
+    // Handles password hashing and verification using PBKDF2
     public class PasswordHasher : IPasswordHasher
     {
         private const int SaltSize = 128 / 8;
@@ -10,6 +11,8 @@ namespace Study_dashboard_API.Security
         private const int Iterations = 10000;
         private static readonly HashAlgorithmName hashAlgorithmName = HashAlgorithmName.SHA256;
         private static char Delimiter = ';';
+
+        // Hashes a password and returns a string with salt and hash
         public string HashPassword(string password)
         {
             var salt = RandomNumberGenerator.GetBytes(SaltSize);
@@ -18,6 +21,7 @@ namespace Study_dashboard_API.Security
             return string.Join(Delimiter, Convert.ToBase64String(salt), Convert.ToBase64String(hash));
         }
 
+        // Verifies if the given password matches the stored hash
         public bool Verify(string passwordHash, string inputPassword)
         {
             var elements = passwordHash.Split(Delimiter);

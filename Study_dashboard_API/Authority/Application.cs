@@ -1,5 +1,6 @@
 ﻿namespace Study_dashboard_API.Authority
 {
+    // Represents a client application registered in the system
     public class Application
     {
         public int ApplicationId { get; set; }

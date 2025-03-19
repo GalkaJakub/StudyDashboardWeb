@@ -5,7 +5,8 @@ using StudyDS_web.Models.ViewModels;
 
 namespace StudyDS_web.Controllers
 {
-    public class UsersController : ControllerBase
+    // Controller responsible for managing user data and user statistics
+    public class UsersController : BaseController
     {
         private readonly IWebApiExecuter webApiExecuter;
 
@@ -13,11 +14,14 @@ namespace StudyDS_web.Controllers
         {
             this.webApiExecuter = webApiExecuter;
         }
+
+        // Display a list of all users
         public async Task<IActionResult> Index()
         {
             return View(await webApiExecuter.InvokeGet<List<User>>("users"));
         }
 
+        // Display current user data for editing
         public async Task<IActionResult> UpdateUser()
         {
             try
@@ -37,6 +41,7 @@ namespace StudyDS_web.Controllers
             return NotFound();
         }
 
+        // Save updated user data
         [HttpPost]
         public async Task<IActionResult> UpdateUser(User user)
         {
@@ -54,6 +59,8 @@ namespace StudyDS_web.Controllers
             }
             return View(user);
         }
+
+        // Delete user account by ID
         public async Task<IActionResult> DeleteUser(int userId)
         {
             try
@@ -68,6 +75,7 @@ namespace StudyDS_web.Controllers
             }
         }
 
+        // Generate and display user statistics
         public async Task<IActionResult> GetStats()
         {
             try

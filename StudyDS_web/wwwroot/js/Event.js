@@ -1,4 +1,5 @@
-﻿const priorityMap = {
+﻿// Mapping priority values to their display names
+const priorityMap = {
     "0": "Niski",
     "1": "Średni",
     "2": "Wysoki"
@@ -8,7 +9,9 @@ function updatePriorityValue(val) {
     document.getElementById("priorityValue").innerText = priorityMap[val] ?? val;
 }
 
+// Updates the visible priority label based on the slider value
 document.addEventListener("DOMContentLoaded", function () {
+    // Handle slider value display
     const slider = document.getElementById("priorityRange");
     if (slider) {
         updatePriorityValue(slider.value);
@@ -17,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Show "Show more" button if the description is truncated
     document.querySelectorAll(".description-preview").forEach(desc => {
         const id = desc.id.split("-")[1];
         const toggleBtn = document.querySelector(`.show-description[data-id="${id}"]`);
@@ -25,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Show full description in modal
     document.querySelectorAll(".show-description").forEach(button => {
         button.addEventListener("click", function () {
             const name = this.dataset.name;
@@ -38,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Open edit event modal with fetched content
     const editButtons = document.querySelectorAll(".edit-event-btn");
 
     editButtons.forEach(button => {
@@ -71,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Open "mark as passed" modal
     const editPassButtons = document.querySelectorAll(".edit-pass-event-btn");
     editPassButtons.forEach(button => {
         button.addEventListener("click", function (e) {
@@ -93,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Sorting event cards based on selected option
     const container = document.getElementById("eventsContainer");
     const cards = Array.from(container.querySelectorAll(".event-card"));
     const sortSelect = document.getElementById("sortSelect");

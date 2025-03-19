@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace StudyDS_web.Data
 {
+    // Service for executing HTTP requests to the Web API
     public class WebApiExecuter : IWebApiExecuter
     {
         private const string apiName = "StudyApi";
@@ -20,6 +21,8 @@ namespace StudyDS_web.Data
             this.configuration = configuration;
             this.httpContextAccessor = httpContextAccessor;
         }
+
+        // Sends GET request to API and returns deserialized response
         public async Task<T?> InvokeGet<T>(string relativeUrl)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
@@ -31,6 +34,7 @@ namespace StudyDS_web.Data
             return await response.Content.ReadFromJsonAsync<T>();
         }
 
+        // Sends POST request with JSON body and returns deserialized response
         public async Task<T?> InvokePost<T>(string relativeUrl, T obj)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
@@ -39,6 +43,8 @@ namespace StudyDS_web.Data
             await HandleError(response);
             return await response.Content.ReadFromJsonAsync<T>();
         }
+
+        // Sends PUT request with JSON body
         public async Task InvokePut<T>(string relativeUrl, T obj)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
@@ -48,6 +54,7 @@ namespace StudyDS_web.Data
 
         }
 
+        // Sends DELETE request
         public async Task InvokeDelete<T>(string relativeUrl)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
@@ -56,6 +63,7 @@ namespace StudyDS_web.Data
             await HandleError(response);
         }
 
+        // Handles error responses by throwing a custom exception   
         private async Task HandleError(HttpResponseMessage httpResponse)
         {
             if (!httpResponse.IsSuccessStatusCode)
@@ -65,6 +73,7 @@ namespace StudyDS_web.Data
             }
         }
 
+        // Sends POST request to register a new user
         public async Task<T?> InvokePostRegister<T>(string relativeUrl, T obj)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
@@ -73,6 +82,7 @@ namespace StudyDS_web.Data
             return await response.Content.ReadFromJsonAsync<T>();
         }
 
+        // Sends PUT request to update user password
         public async Task InvokePutPassword<T>(string relativeUrl, T obj)
         {
             var httpClient = httpClientFactory.CreateClient(apiName);
@@ -81,6 +91,7 @@ namespace StudyDS_web.Data
             await HandleError(response);
         }
 
+        // Authenticates user and stores JWT token in session
         public async Task InvokeLogin(string? login, string? password)
         {
 
@@ -104,6 +115,7 @@ namespace StudyDS_web.Data
             httpContextAccessor.HttpContext?.Session.SetString("access_token", strToken);
         }
 
+        // Adds JWT token to Authorization header for API requests
         private void AddJwtToHeader(HttpClient httpClient)
         {
             string? strToken = httpContextAccessor.HttpContext?.Session.GetString("access_token");

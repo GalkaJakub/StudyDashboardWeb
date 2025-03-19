@@ -5,7 +5,8 @@ using StudyDS_web.Models.ViewModels;
 
 namespace StudyDS_web.Controllers
 {
-    public class AccountController : ControllerBase
+    // Controller responsible for user account-related actions like login, registration, and password changes
+    public class AccountController : BaseController
     {
         private readonly IWebApiExecuter webApiExecuter;
 
@@ -14,10 +15,13 @@ namespace StudyDS_web.Controllers
             this.webApiExecuter = webApiExecuter;
         }
 
+        // Displays the login form
         public IActionResult Login()
         {
             return View();
         }
+
+        // Handles login form
         [HttpPost]
         public async Task<IActionResult> Login(User user)
         {
@@ -36,10 +40,13 @@ namespace StudyDS_web.Controllers
             return View(user);
         }
 
+        // Displays the registration form
         public IActionResult Register()
         {
             return View();
         }
+
+        // Handles registration form
         [HttpPost]
         public async Task<IActionResult> Register(User user)
         {
@@ -61,6 +68,7 @@ namespace StudyDS_web.Controllers
             return View(user);
         }
 
+        // Logs the user out by removing access token from session
         public IActionResult Logout()
         {
             HttpContext.Session.TryGetValue("access_token", out var token);
@@ -71,6 +79,7 @@ namespace StudyDS_web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        // Displays the change password form
         public async Task<IActionResult> ChangePassword()
         {
             try
@@ -94,6 +103,7 @@ namespace StudyDS_web.Controllers
             return NotFound();
         }
 
+        // Handles password update request
         [HttpPost]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {

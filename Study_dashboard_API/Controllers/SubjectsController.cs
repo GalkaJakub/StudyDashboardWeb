@@ -9,9 +9,10 @@ using Study_dashboard_API.Models;
 
 namespace Study_dashboard_API.Controllers
 {
+    // Controller responsible for handling subject-related API requests
     [ApiController]
     [Route("api/[controller]")]
-    [JwtTokenAuthFilter]
+    [JwtTokenAuthFilter]// Custom JWT authentication filter
     public class SubjectsController: ControllerBase
     {
         private readonly ApplicationDbContext db;
@@ -21,6 +22,8 @@ namespace Study_dashboard_API.Controllers
             this.db = db;
         }
 
+        // GET: api/subjects
+        // Returns all subjects for the currently authenticated user
         [HttpGet]
         public IActionResult getSubjects()
         {
@@ -29,13 +32,17 @@ namespace Study_dashboard_API.Controllers
             return Ok(subjects);
         }
 
+        // GET: api/subjects/{subjectId}
+        // Returns a specific subject by its ID
         [HttpGet("{subjectId}")]
         [TypeFilter(typeof(Subject_ValidateSubjectIdFilterAttribute))]
         public IActionResult getSubjectById(int subjectId)
         {
             return Ok(HttpContext.Items["subject"]);
         }
-        
+
+        // POST: api/subjects
+        // Creates a new subject for the user
         [HttpPost]
         [TypeFilter(typeof(Subject_ValidateAddSubjectFilterAttribute))]
         public IActionResult createSubject([FromBody]Subject subject)
@@ -47,6 +54,8 @@ namespace Study_dashboard_API.Controllers
             return CreatedAtAction(nameof(getSubjectById), new { subjectId = subject.SubjectId }, subject);
         }
 
+        // PUT: api/subjects/{subjectId}
+        // Updates an existing subject's details
         [HttpPut("{subjectId}")]
         [TypeFilter(typeof(Subject_ValidateSubjectIdFilterAttribute))]
         [TypeFilter(typeof(Subject_ValidateUpdateSubjectFilterAttribute))]
@@ -64,6 +73,8 @@ namespace Study_dashboard_API.Controllers
             return NoContent();
         }
 
+        // DELETE: api/subjects/{subjectId}
+        // Deletes a subject and detaches related events
         [HttpDelete("{subjectId}")]
         [TypeFilter(typeof(Subject_ValidateSubjectIdFilterAttribute))]
         public IActionResult deleteSubject(int subjectId)

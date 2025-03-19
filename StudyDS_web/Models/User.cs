@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StudyDS_web.Models
 {
+    // Represents a user in the system
     public class User
     {
         [Key]

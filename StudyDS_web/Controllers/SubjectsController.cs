@@ -8,7 +8,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StudyDS_web.Controllers
 {
-    public class SubjectsController : ControllerBase
+    // Controller responsible for handling subjects
+    public class SubjectsController : BaseController
     {
         private readonly IWebApiExecuter webApiExecuter;
 
@@ -16,6 +17,8 @@ namespace StudyDS_web.Controllers
         {
             this.webApiExecuter = webApiExecuter;
         }
+
+        // Display list of subjects + form to add a new one
         public async Task<IActionResult> Index()
         {
             var subjects = await webApiExecuter.InvokeGet<List<Subject>>("subjects");
@@ -44,6 +47,7 @@ namespace StudyDS_web.Controllers
             return View(model);
         }
 
+        // Create a new subject
         [HttpPost]
         public async Task<IActionResult> addSubject(Subject subject)
         {
@@ -67,12 +71,13 @@ namespace StudyDS_web.Controllers
             return View("Index", subjects);
         }
 
+        // Delete selected subject
         public async Task<IActionResult> DeleteSub(int subjectId)
         {
             await webApiExecuter.InvokeDelete<Subject>($"subjects/{subjectId}");
             return RedirectToAction(nameof(Index));
         }
-
+        // Load subject into modal for editing  
         public async Task<IActionResult> UpdateSub(int subjectId)
         {
             try
@@ -112,6 +117,7 @@ namespace StudyDS_web.Controllers
             return NotFound();
         }
 
+        // Save updated subject
         [HttpPost]
         public async Task<IActionResult> UpdateSub(Subject subject)
         {
@@ -130,6 +136,7 @@ namespace StudyDS_web.Controllers
             return View(subject);
         }
 
+        // Load modal for setting grade/pass status
         public async Task<IActionResult> PassSub(int subjectId)
         {
             try

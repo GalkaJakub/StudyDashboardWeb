@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace Study_dashboard_API.Models
 {
+    // Represents an event (e.g., exam, test, etc.)
     public class Event
     {
         [Key]
@@ -23,18 +24,19 @@ namespace Study_dashboard_API.Models
         public bool IsPassed { get; set; } = false;
         public double? Grade { get; set; }
         [JsonIgnore]
-        public User? User { get; set; }
-        public Subject? Subject { get; set; }
+        public User? User { get; set; } // Navigation property to User
+        public Subject? Subject { get; set; } // Navigation property to Subject
 
     }
 
+    // Defines priority levels for events
     public enum PriorityLevelEnum
     {
         Low,
         Medium,
         High
     }
-
+    // Defines possible event types
     public enum EventType
     {
         Exam,

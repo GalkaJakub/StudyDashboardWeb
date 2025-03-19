@@ -3,6 +3,7 @@ using Study_dashboard_API.Models;
 
 namespace Study_dashboard_API.Data
 {
+    // Database context for the application
     public class ApplicationDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
@@ -17,17 +18,15 @@ namespace Study_dashboard_API.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Relacja User → Event – ustawiamy na NoAction, żeby nie powstawała druga kaskada
             modelBuilder.Entity<Event>()
                 .HasOne(e => e.User)
-                .WithMany() // lub .WithMany(u => u.Events)
+                .WithMany()
                 .HasForeignKey(e => e.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Relacja Subject → Event – ustawiamy Cascade
             modelBuilder.Entity<Event>()
                 .HasOne(e => e.Subject)
-                .WithMany() // lub .WithMany(s => s.Events)
+                .WithMany()
                 .HasForeignKey(e => e.SubjectId)
                 .OnDelete(DeleteBehavior.NoAction);
 

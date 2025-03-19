@@ -8,7 +8,8 @@ using System.Reflection;
 
 namespace StudyDS_web.Controllers
 {
-    public class EventsController : ControllerBase
+    // Controller responsible for handling Events
+    public class EventsController : BaseController
     {
         private readonly IWebApiExecuter webApiExecuter;
 
@@ -16,6 +17,8 @@ namespace StudyDS_web.Controllers
         {
             this.webApiExecuter = webApiExecuter;
         }
+
+        // Display all events + form to add new 
         public async Task<IActionResult> Index()
         {
             var events = await webApiExecuter.InvokeGet<List<Event>>("events");
@@ -45,7 +48,7 @@ namespace StudyDS_web.Controllers
             return View(viewModel);
         }
 
-
+        // Show form to create event
         public async Task<IActionResult> addEvent()
         {
             var model = new EventFormViewModel
@@ -56,6 +59,7 @@ namespace StudyDS_web.Controllers
             return View(model);
         }
 
+        // Handle event creation
         [HttpPost]
         public async Task<IActionResult> addEvent(EventFormViewModel model)
         {
@@ -79,7 +83,7 @@ namespace StudyDS_web.Controllers
             return View(model);
         }
 
-
+        // Load event data into modal for editing
         public async Task<IActionResult> UpdateEv(int eventId)
         {
             var ev = await webApiExecuter.InvokeGet<Event>($"events/{eventId}");
@@ -109,6 +113,7 @@ namespace StudyDS_web.Controllers
             return View(model);
         }
 
+        // Save event update
         [HttpPost]
         public async Task<IActionResult> UpdateEv(EventFormViewModel model)
         {
@@ -128,12 +133,14 @@ namespace StudyDS_web.Controllers
             return View(model);
         }
 
+        // Delete event
         public async Task<IActionResult> DeleteEv(int eventId)
         {
             await webApiExecuter.InvokeDelete<Event>($"events/{eventId}");
             return RedirectToAction(nameof(Index));
         }
 
+        // Load modal to mark event as passed (or grade)
         public async Task<IActionResult> UpdatePassEv(int eventId)
         {
             try
@@ -153,6 +160,7 @@ namespace StudyDS_web.Controllers
             }
         }
 
+        // Save passed event update
         [HttpPost]
         public async Task<IActionResult> UpdatePassEv(Event ev)
         {

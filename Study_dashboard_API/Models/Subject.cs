@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Study_dashboard_API.Models
 {
+    // Represents a school subject
     public class Subject
     {
         [Key]
@@ -23,6 +24,7 @@ namespace Study_dashboard_API.Models
         public User? User { get; set; }
     }
 
+    // Enum for types of passing methods
     public enum PassingType
     {
         exam,

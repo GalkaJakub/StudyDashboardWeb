@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Study_dashboard_API.Models
 {
+    // Represents an application user
     public class User
     {
         [Key]

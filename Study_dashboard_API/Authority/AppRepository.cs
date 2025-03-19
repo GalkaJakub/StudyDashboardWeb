@@ -2,6 +2,7 @@
 {
     public static class AppRepository
     {
+        // A static repository holding information about registered applications
         private static List<Application> _applications = new List<Application>()
         {
             new Application()

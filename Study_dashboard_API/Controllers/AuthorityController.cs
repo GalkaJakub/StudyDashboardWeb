@@ -1,20 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Study_dashboard_API.Authority;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using System.Security.Claims;
-using System.Collections.Generic;
 using Study_dashboard_API.Data;
 using Study_dashboard_API.Security;
-using Study_dashboard_API.Models;
 
 namespace Study_dashboard_API.Controllers
 {
+    // API controller for authentication requests
     [ApiController]
     public class AuthorityController: ControllerBase
     {
-        //IConfiguration pobiera informacje z ustawien konfiguracyjnych aplikacji np. z appsettings.json 
+
         private readonly IConfiguration configuration;
         private readonly ApplicationDbContext db;
         private readonly IPasswordHasher passwordHasher;
@@ -26,6 +21,8 @@ namespace Study_dashboard_API.Controllers
             this.passwordHasher = passwordHasher;
         }
 
+        // POST: /auth
+        // Authenticates a user and returns a JWT token if successful
         [HttpPost("auth")]
         public IActionResult Authenicate([FromBody]AppCredencial appCredencial)
         {

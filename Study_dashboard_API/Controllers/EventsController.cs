@@ -7,9 +7,10 @@ using Study_dashboard_API.Models;
 
 namespace Study_dashboard_API.Controllers
 {
+    // Controller responsible for handling event-related API requests
     [ApiController]
     [Route("api/[controller]")]
-    [JwtTokenAuthFilter]
+    [JwtTokenAuthFilter]// Custom JWT authentication filter
     public class EventsController: ControllerBase
     {
         private readonly ApplicationDbContext db;
@@ -19,6 +20,8 @@ namespace Study_dashboard_API.Controllers
             this.db = db;
         }
 
+        // GET: api/events
+        // Returns all events for the authenticated user
         [HttpGet]
         public ActionResult getEvents()
         {
@@ -45,6 +48,8 @@ namespace Study_dashboard_API.Controllers
             return Ok(eventDtos);
         }
 
+        // GET: api/events/{eventId}
+        // Returns a specific event by ID
         [HttpGet("{eventId}")]
         [TypeFilter(typeof(Event_ValidateEventIdFilterAttribute))]
         public ActionResult getEventById(int eventId)
@@ -52,6 +57,8 @@ namespace Study_dashboard_API.Controllers
             return Ok(HttpContext.Items["event"]);
         }
 
+        // POST: api/events
+        // Creates a new event for the current user
         [HttpPost]
         [TypeFilter(typeof(Event_ValidateAddEventFilterAttribute))]
         public ActionResult createEvent([FromBody]Event ev)
@@ -63,6 +70,8 @@ namespace Study_dashboard_API.Controllers
             return CreatedAtAction("getEventById", new {eventId = ev.EventId}, ev);
         }
 
+        // PUT: api/events/{eventId}
+        // Updates an existing event
         [HttpPut("{eventId}")]
         [TypeFilter(typeof(Event_ValidateEventIdFilterAttribute))]
         [TypeFilter(typeof(Event_ValidateUpdateEventFilterAttribute))]
@@ -81,6 +90,8 @@ namespace Study_dashboard_API.Controllers
             return NoContent();
         }
 
+        // DELETE: api/events/{eventId}
+        // Deletes an event by ID
         [HttpDelete("{eventId}")]
         [TypeFilter(typeof(Event_ValidateEventIdFilterAttribute))]
         public ActionResult deleteEvent(int eventId)

@@ -2,6 +2,7 @@
 
 namespace StudyDS_web.Models
 {
+    // Represents a subject assigned to a user
     public class Subject
     {
         [Key]
@@ -20,6 +21,7 @@ namespace StudyDS_web.Models
     }
 }
 
+// Enum representing the type of passing method for a subject
 public enum PassingType
 {
     [Display(Name = "Egzamin")]
