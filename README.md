@@ -5,7 +5,8 @@ With database integration, users can create and organize academic events and sub
 
 # Demo
 
-App: [https://studyds.azurewebsites.net](https://studyds.azurewebsites.net)  
+App: [https://studyds.azurewebsites.net](https://studyds.azurewebsites.net)  Note: The first request may be slightly slower or incorect due to cold start. The app uses a serverless SQL database on Azure, which pauses during inactivity to reduce cost.
+
 Test account:  
 **Login:** Test  
 **Password:** Test1234
